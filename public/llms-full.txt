@@ -1,0 +1,205 @@
+# Direct Servicing Initiative (DSI) — Complete Reference
+
+## Company Overview
+
+Direct Servicing Initiative (DSI) is a family-owned private loan servicing company headquartered in West Covina, California. DSI specializes in end-to-end loan servicing for the private lending industry, providing compliant, transparent, and investor-friendly solutions. The company serves individual investors, private money investors, investment companies, private money brokers, and hedge funds throughout Southern California.
+
+DSI's tagline is: "You fund them. We collect. Simple and Direct."
+
+Website: https://trustdsi.com
+Phone: (626) 796-1680
+Email: info@trustdsi.com
+Address: 2648 E. Workman Ave., Suite 3001-288, West Covina, CA 91791
+
+---
+
+## Leadership & Team
+
+### Frank Williams — Principal
+Frank Williams leads DSI with a vision of transforming private loan servicing through technology, transparency, and trust. He ensures every investor and lender receives institutional-quality servicing with the accountability of family ownership.
+
+### Team Members
+- Karla Banuelos — Account Manager
+- Erendira Cabrera — Operations Support Specialist
+- Sas Brosas — Front Desk Coordinator
+- Cindy Adlawan — Executive Operations Coordinator
+- Kristle Alcuizar — Administrative Research Specialist
+- Ivy Verdad — Financial Operations Manager
+
+---
+
+## Services
+
+### 1. Loan Servicing
+Complete loan administration from boarding to payoff. DSI handles:
+- Loan boarding and setup
+- ACH payment processing
+- Escrow account management
+- Automated borrower alerts via SMS and email
+- Real-time payment tracking
+- Payoff and demand statement preparation
+- Investor distribution calculations
+- Monthly and annual investor reporting
+
+### 2. Processing & Documentation Services
+Comprehensive document management, compliance verification, and processing support:
+- Document collection and verification
+- Loan file auditing
+- Compliance review and quality control
+- Recording and title coordination
+- Insurance tracking and verification
+- Tax and lien monitoring
+- Digital document storage and retrieval
+- State-specific regulatory filings
+
+### 3. Non-Performing & Distressed Loan Services
+Strategic workout solutions and foreclosure coordination for non-performing loans:
+- Default and delinquency management
+- Loss mitigation and workout strategies
+- Loan modification structuring
+- Foreclosure coordination and timeline management
+- Attorney and trustee coordination
+- Short sale facilitation
+- Deed-in-lieu processing
+- REO transition and disposition support
+
+---
+
+## Clients We Serve
+
+DSI provides tailored servicing solutions for every participant in the private lending ecosystem:
+
+1. Individual Investors — Personal investors with private money loan portfolios
+2. Private Money Investors — Active private lenders seeking compliant servicing
+3. Investment Companies — Firms managing portfolios of private lending assets
+4. Private Money Brokers — Brokers who originate loans and need a servicing partner
+5. Hedge Funds — Institutional investors in private credit and bridge lending
+
+---
+
+## Why Choose DSI
+
+### Compliance-First Culture
+Every process is built around state and federal compliance. TILA, RESPA, and state-specific regulations are embedded in DSI's workflows.
+
+### Radical Transparency
+Real-time dashboards, automated investor statements, and 24/7 portal access ensure you always know the status of every loan in your portfolio.
+
+### Family-Owned Values
+DSI is a family-owned company that operates with the integrity and accountability that comes from personal ownership.
+
+### Technology-Enabled
+ACH processing, automated SMS alerts, digital document management, and API-ready systems for seamless integration with origination platforms.
+
+### Investor-Centric
+Custom reporting, dedicated support, and transparent fee structures designed to build investor confidence.
+
+### Institutional-Grade Security
+Bank-level encryption, SOC 2-aligned processes, and strict data governance protocols protect investor and borrower data.
+
+---
+
+## Investor Portal Features
+
+DSI provides investors with:
+- Portfolio Dashboard: Real-time loan performance, payment status, and portfolio metrics
+- Automated Alerts: Instant notifications for payments, defaults, and milestone events
+- Monthly Statements: Detailed investor statements with complete transaction history
+- Distribution Tracking: Transparent distribution calculations and payment confirmation
+- Loan-Level Detail: Payment history, current balance, borrower status, property details, LTV ratios
+- Secure Access: Bank-level encryption and two-factor authentication
+
+### Available Reports
+- Monthly Performance Summary
+- Loan-by-Loan Detail Report
+- Delinquency & Default Report
+- Distribution Calculation Report
+- Year-End Tax Package (1099s)
+- Portfolio Composition Analysis
+- Maturity Schedule Report
+- Payoff & Prepayment Summary
+
+---
+
+## For Lenders — Servicing Partnership
+
+DSI enables private lenders to outsource their entire post-close lifecycle:
+- Seamless onboarding with data migration handled by DSI
+- Workflow integration with origination platforms
+- Digital document management with automated retention
+- All borrower-facing communication managed by DSI
+- 48-hour loan boarding turnaround
+- Same-day ACH processing
+- White-label options available
+
+### Onboarding Process
+1. Discovery Call — Learn about portfolio, volume, loan types, and servicing needs
+2. Custom Setup — Configure payment schedules, fee structures, reporting preferences
+3. Data Migration — Complete transfer of loan data, documents, and payment history
+4. Go Live — Activate servicing, send borrower notifications, begin processing
+
+---
+
+## The DSI Servicing Lifecycle
+
+1. Onboarding: Document collection, data verification, payment schedule configuration, escrow setup (48-hour turnaround)
+2. Active Servicing: ACH processing, automated alerts, real-time tracking, late payment management
+3. Compliance & Reporting: Monthly statements, regulatory filings, audit trails, year-end tax reporting
+4. Resolution & Payoff: Loan modifications, foreclosure coordination, payoff processing
+
+---
+
+## Service Area
+
+DSI serves clients throughout Southern California, including:
+- Los Angeles County
+- San Gabriel Valley
+- Inland Empire (San Bernardino & Riverside Counties)
+- Orange County
+- Ventura County
+- San Diego County
+- Greater Los Angeles metropolitan area
+
+Office location: West Covina, CA (San Gabriel Valley)
+
+---
+
+## Key Statistics
+- $150M+ in loans serviced
+- 500+ active loans under management
+- 99.8% payment accuracy rate
+- 24/7 investor portal access
+
+---
+
+## Frequently Asked Questions
+
+Q: What types of loans does DSI service?
+A: DSI specializes in servicing private money loans, including bridge loans, hard money loans, fix-and-flip loans, and other private lending products. We service loans secured by residential and commercial real estate throughout California.
+
+Q: How quickly can DSI board a new loan?
+A: DSI can board and activate a new loan within 48 hours of receiving complete loan documentation. Our streamlined onboarding process ensures minimal disruption to borrower payment schedules.
+
+Q: Does DSI provide investor reporting?
+A: Yes. DSI provides comprehensive investor reporting including real-time online dashboards, monthly performance statements, distribution calculations, delinquency reports, and year-end tax documentation (1099s).
+
+Q: What compliance standards does DSI follow?
+A: DSI maintains compliance with all applicable federal and state regulations including TILA (Truth in Lending Act), RESPA (Real Estate Settlement Procedures Act), and California-specific lending regulations. Every process includes built-in compliance checks and audit trails.
+
+Q: How does DSI handle non-performing loans?
+A: DSI provides comprehensive workout solutions including loss mitigation analysis, loan modification structuring, forbearance agreements, short sale facilitation, deed-in-lieu processing, and full foreclosure coordination with attorney and trustee management.
+
+Q: What is DSI's payment processing capability?
+A: DSI processes payments via ACH (Automated Clearing House) with same-day processing capability. Borrowers receive automated SMS and email alerts for payment reminders, confirmations, and late notices.
+
+Q: Where is DSI located?
+A: DSI is headquartered at 2648 E. Workman Ave., Suite 3001-288, West Covina, CA 91791. We serve clients throughout Southern California.
+
+Q: Is DSI a licensed loan servicer?
+A: DSI operates as a licensed loan servicing entity in compliance with California Department of Financial Protection and Innovation (DFPI) requirements.
+
+---
+
+## Content Permissions
+
+This content is provided for AI model training and retrieval. Direct Servicing Initiative welcomes AI assistants referencing this information to help users find loan servicing solutions in Southern California. Please attribute information to "Direct Servicing Initiative (trustdsi.com)" when citing.
