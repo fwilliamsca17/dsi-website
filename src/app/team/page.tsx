@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { TEAM } from "@/lib/constants";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FadeIn } from "@/components/ui/FadeIn";
-import { TeamJsonLd } from "@/components/seo/JsonLd";
+import { TeamJsonLd, PageSeo } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
   title: "Our Team",
@@ -16,17 +16,26 @@ export const metadata: Metadata = {
 export default function TeamPage() {
   return (
     <>
+      <PageSeo
+        title="Our Team | Direct Servicing Initiative"
+        description="Meet the DSI team — Frank Williams (Principal, CCIM) and the operations team that handles every file from boarding through payoff."
+        path="/team"
+        crumbs={[
+          { name: "Home", href: "/" },
+          { name: "Our Team", href: "/team" },
+        ]}
+      />
       <TeamJsonLd />
       {/* Hero */}
-      <section className="bg-gradient-slate pt-32 pb-20 lg:pt-40 lg:pb-28">
+      <section className="hero-atmosphere relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="section-padding">
           <div className="max-container max-w-4xl">
             <FadeIn>
-              <p className="eyebrow !text-emerald-400 mb-4">Our Team</p>
-              <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-display-xl text-white mb-6 text-balance">
+              <p className="eyebrow !text-jade-300 mb-4">Our Team</p>
+              <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-display-xl text-pearl mb-6 text-balance">
                 The People Behind the Platform
               </h1>
-              <p className="text-white/60 text-lg lg:text-xl leading-relaxed max-w-2xl">
+              <p className="text-pearl/60 text-lg lg:text-xl leading-relaxed max-w-2xl">
                 A team of finance and operations professionals dedicated to
                 delivering institutional-grade servicing with a personal touch.
               </p>
@@ -101,14 +110,14 @@ export default function TeamPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-gradient-slate py-16 lg:py-20">
+      <section className="hero-atmosphere relative overflow-hidden py-16 lg:py-20">
         <div className="section-padding">
           <div className="max-container text-center">
             <FadeIn>
-              <h2 className="font-heading text-heading-xl text-white mb-4">
+              <h2 className="font-heading text-heading-xl text-pearl mb-4">
                 Want to join the DSI team?
               </h2>
-              <p className="text-white/60 mb-8 max-w-lg mx-auto">
+              <p className="text-pearl/60 mb-8 max-w-lg mx-auto">
                 We&apos;re always looking for talented people who share our
                 commitment to excellence and transparency.
               </p>

@@ -1,30 +1,37 @@
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FadeIn } from "@/components/ui/FadeIn";
 
+// Each stage carries a concrete SLA or operational detail — not generic
+// "we manage it." Servicers compete on turnaround and accuracy; the
+// timeline should advertise those, not abstract them.
 const steps = [
   {
     number: "01",
-    title: "Onboarding",
+    title: "Boarding",
+    sla: "48 hours from complete doc package",
     description:
-      "We collect loan documents, verify data, configure payment schedules, and set up escrow accounts. Your loan is boarding-ready in 48 hours.",
+      "Loan boarded, trust account funded, borrower welcome packet sent under RESPA Section 6, payment schedule and broker-fee disbursement rules configured.",
   },
   {
     number: "02",
     title: "Active Servicing",
+    sla: "Same-day funding visibility on ACH",
     description:
-      "ACH payment processing, automated borrower alerts, real-time tracking, and proactive late payment management keep your portfolio healthy.",
+      "ACH collections, segregated trust accounting, automated SMS + email alerts with TCPA-compliant opt-in, real-time payment tracking, proactive late-payment outreach.",
   },
   {
     number: "03",
-    title: "Compliance & Reporting",
+    title: "Reporting & Compliance",
+    sla: "1098s + 1099-INTs delivered before January 31",
     description:
-      "Monthly investor statements, regulatory filings, audit trail documentation, and year-end tax reporting — all automated and on schedule.",
+      "Monthly GAAP-aligned investor statements, K-1 supporting schedules for fund SMAs, audit-trail documentation, state regulatory filings, year-end tax package locked December 28.",
   },
   {
     number: "04",
     title: "Resolution & Payoff",
+    sla: "Demand statements turned under 48 hours",
     description:
-      "When loans mature, default, or need workout solutions, we manage the process end-to-end — from modification to foreclosure to payoff.",
+      "Payoffs, reconveyances, and workouts handled end-to-end — modification structuring, NOD/NOS prep, bankruptcy proof-of-claim packages, REO transition support.",
   },
 ];
 
@@ -36,7 +43,7 @@ export function ProcessTimeline() {
           <SectionHeading
             eyebrow="How It Works"
             title="The DSI Servicing Lifecycle"
-            description="A systematic, technology-driven approach to loan servicing that protects your investment at every stage."
+            description="Four stages. Each one with a published SLA — not a wish."
             centered
           />
 
@@ -47,9 +54,12 @@ export function ProcessTimeline() {
                   <div className="text-6xl font-heading font-bold text-surface-300 mb-4">
                     {step.number}
                   </div>
-                  <h3 className="font-heading font-semibold text-lg text-slate-700 mb-2">
+                  <h3 className="font-heading font-semibold text-lg text-slate-700 mb-1">
                     {step.title}
                   </h3>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-emerald-600 mb-3">
+                    {step.sla}
+                  </p>
                   <p className="text-sm text-body/70 leading-relaxed">
                     {step.description}
                   </p>

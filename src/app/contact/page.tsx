@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { COMPANY, WEB3FORMS_KEY } from "@/lib/constants";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { PageSeo } from "@/components/seo/JsonLd";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -35,16 +36,25 @@ export default function ContactPage() {
 
   return (
     <>
+      <PageSeo
+        title="Contact | Direct Servicing Initiative"
+        description="Talk to DSI about loan servicing, investor reporting, or payoff coordination. Call (626) 796-1680 or email info@trustdsi.com. Every inquiry gets a same-day acknowledgment."
+        path="/contact"
+        crumbs={[
+          { name: "Home", href: "/" },
+          { name: "Contact", href: "/contact" },
+        ]}
+      />
       {/* Hero */}
-      <section className="bg-gradient-slate pt-32 pb-20 lg:pt-40 lg:pb-28">
+      <section className="hero-atmosphere relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="section-padding">
           <div className="max-container max-w-4xl">
             <FadeIn>
-              <p className="eyebrow !text-emerald-400 mb-4">Contact Us</p>
-              <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-display-xl text-white mb-6 text-balance">
+              <p className="eyebrow !text-jade-300 mb-4">Contact Us</p>
+              <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-display-xl text-pearl mb-6 text-balance">
                 Let&apos;s Start a Conversation
               </h1>
-              <p className="text-white/60 text-lg lg:text-xl leading-relaxed max-w-2xl">
+              <p className="text-pearl/60 text-lg lg:text-xl leading-relaxed max-w-2xl">
                 Whether you&apos;re exploring servicing options, requesting a demo,
                 or have questions about our capabilities, we&apos;re here to help.
               </p>

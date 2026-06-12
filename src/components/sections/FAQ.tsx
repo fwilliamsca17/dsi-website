@@ -26,7 +26,7 @@ export function FAQ({
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className={dark ? "bg-gradient-slate py-20 lg:py-section-lg" : "bg-surface-100 py-20 lg:py-section-lg"}>
+    <section className={dark ? "hero-atmosphere relative overflow-hidden py-20 lg:py-section-lg" : "bg-surface-100 py-20 lg:py-section-lg"}>
       <div className="section-padding">
         <div className="max-container max-w-3xl">
           <SectionHeading eyebrow={eyebrow} title={title} centered light={dark} />
@@ -37,7 +37,7 @@ export function FAQ({
                 <div
                   className={
                     dark
-                      ? "border border-white/10 rounded-xl overflow-hidden"
+                      ? "border border-pearl/10 rounded-xl overflow-hidden"
                       : "bg-white border border-surface-300 rounded-xl overflow-hidden"
                   }
                 >
@@ -45,7 +45,7 @@ export function FAQ({
                     onClick={() => setOpenIndex(openIndex === i ? null : i)}
                     className={`w-full flex items-center justify-between px-6 py-4 text-left transition-colors ${
                       dark
-                        ? "hover:bg-white/5 text-white"
+                        ? "hover:bg-white/5 text-pearl"
                         : "hover:bg-surface-100 text-slate-700"
                     }`}
                   >
@@ -61,7 +61,7 @@ export function FAQ({
                   {openIndex === i && (
                     <div
                       className={`px-6 pb-5 text-sm leading-relaxed ${
-                        dark ? "text-white/60" : "text-body/70"
+                        dark ? "text-pearl/60" : "text-body/70"
                       }`}
                     >
                       {faq.answer}

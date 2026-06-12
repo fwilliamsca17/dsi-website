@@ -11,7 +11,7 @@ import { SERVICES } from "@/lib/constants";
 import { SERVICES_FAQS } from "@/lib/faqs";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { FAQ } from "@/components/sections/FAQ";
-import { ServiceJsonLd, FAQJsonLd } from "@/components/seo/JsonLd";
+import { ServiceJsonLd, FAQJsonLd, ServicingProcessJsonLd, PageSeo } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -30,16 +30,26 @@ export default function ServicesPage() {
     <>
       <ServiceJsonLd />
       <FAQJsonLd faqs={SERVICES_FAQS} />
+      <PageSeo
+        title="Services | Direct Servicing Initiative"
+        description="Three core service lines: loan servicing (boarding to payoff), processing & documentation, and non-performing & distressed loan services for California private money lenders."
+        path="/services"
+        crumbs={[
+          { name: "Home", href: "/" },
+          { name: "Services", href: "/services" },
+        ]}
+      />
+      <ServicingProcessJsonLd />
       {/* Hero */}
-      <section className="bg-gradient-slate pt-32 pb-20 lg:pt-40 lg:pb-28">
+      <section className="hero-atmosphere relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="section-padding">
           <div className="max-container max-w-4xl">
             <FadeIn>
-              <p className="eyebrow !text-emerald-400 mb-4">Our Services</p>
-              <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-display-xl text-white mb-6 text-balance">
+              <p className="eyebrow !text-jade-300 mb-4">Our Services</p>
+              <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-display-xl text-pearl mb-6 text-balance">
                 End-to-End Loan Servicing Solutions
               </h1>
-              <p className="text-white/60 text-lg lg:text-xl leading-relaxed max-w-2xl">
+              <p className="text-pearl/60 text-lg lg:text-xl leading-relaxed max-w-2xl">
                 From the moment a loan closes to its final payoff, DSI manages
                 every step of the servicing lifecycle with compliance, precision,
                 and complete transparency.
@@ -117,14 +127,14 @@ export default function ServicesPage() {
       <FAQ faqs={SERVICES_FAQS} title="Servicing FAQs" />
 
       {/* CTA */}
-      <section className="bg-gradient-slate py-16 lg:py-20">
+      <section className="hero-atmosphere relative overflow-hidden py-16 lg:py-20">
         <div className="section-padding">
           <div className="max-container text-center">
             <FadeIn>
-              <h2 className="font-heading text-heading-xl text-white mb-4">
+              <h2 className="font-heading text-heading-xl text-pearl mb-4">
                 Need a custom servicing solution?
               </h2>
-              <p className="text-white/60 mb-8 max-w-lg mx-auto">
+              <p className="text-pearl/60 mb-8 max-w-lg mx-auto">
                 Every portfolio is unique. Let&apos;s design a servicing program
                 tailored to your specific requirements.
               </p>

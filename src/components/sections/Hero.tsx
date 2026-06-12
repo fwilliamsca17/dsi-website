@@ -1,98 +1,177 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Shield, BarChart3, Clock } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, ChevronDown, Shield, BarChart3, Clock } from "lucide-react";
+
+// Rotating loan types DSI services — drives SEO depth and signals
+// the breadth of private-money product types we board.
+const ROTATING_TYPES = [
+  "Bridge Loan",
+  "Hard Money Note",
+  "Construction Draw",
+  "Fractional Trust Deed",
+  "Distressed Workout",
+  "SDIRA Note",
+];
 
 export function Hero() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % ROTATING_TYPES.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="relative bg-gradient-slate pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-[0.03]">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
-            backgroundSize: "40px 40px",
-          }}
-        />
-      </div>
+    <section className="hero-atmosphere relative flex min-h-screen items-center overflow-hidden">
+      {/* Drifting light source */}
+      <div className="hero-glow pointer-events-none absolute -right-[10%] -top-[15%] h-[65vw] w-[65vw] motion-safe:animate-glow-drift" />
+      {/* Film grain */}
+      <div className="hero-grain pointer-events-none absolute inset-0 opacity-[0.07]" />
+      {/* Vignette */}
+      <div className="hero-vignette pointer-events-none absolute inset-0" />
 
-      {/* Gradient orb */}
-      <div className="absolute top-1/4 right-0 w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-[120px]" />
+      <div className="relative z-10 max-container section-padding w-full pt-32 pb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left: Copy */}
+          <div>
+            <p
+              className="hero-in mb-6 flex items-center gap-3 text-label font-semibold uppercase tracking-[0.22em] text-jade-300"
+              style={{ animationDelay: "0ms" }}
+            >
+              <span className="h-px w-8 bg-jade-400/70" />
+              Private Loan Servicing · Southern California
+            </p>
 
-      <div className="relative section-padding">
-        <div className="max-container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left: Copy */}
-            <div>
-              <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-display-xl text-white mb-6 text-balance">
-                You fund them. We collect.{" "}
-                <span className="text-emerald-400">Simple and Direct.</span>
-              </h1>
+            <h1
+              className="hero-in-lcp mb-6 font-heading font-bold text-display-lg text-pearl leading-[1.04] md:text-display-xl"
+              style={{ animationDelay: "90ms" }}
+            >
+              You fund them. We collect.
+              <br />
+              <span className="text-jade-gradient">Simple and Direct.</span>
+            </h1>
 
-              <p className="text-white/60 text-lg lg:text-xl leading-relaxed max-w-xl mb-10">
-                Peace of mind, transparency, and efficiency in loan servicing.
-                Tailored for individual investors, private lenders, hedge funds,
-                and investment companies.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/contact" className="btn-primary text-base px-8 py-4">
-                  Start a Conversation
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-                <Link
-                  href="/services"
-                  className="inline-flex items-center gap-2 text-white/70 hover:text-white font-medium text-sm transition-colors px-4 py-4"
+            <div
+              className="hero-in mb-7 flex h-12 items-center md:h-14"
+              style={{ animationDelay: "200ms" }}
+            >
+              <AnimatePresence mode="wait">
+                <motion.p
+                  key={currentIndex}
+                  initial={{ opacity: 0, y: 14 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -14 }}
+                  transition={{ duration: 0.4 }}
+                  className="text-xl font-light text-pearl/70 md:text-2xl"
                 >
-                  Explore Our Services
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
+                  We service your{" "}
+                  <span className="font-medium text-jade-300">
+                    {ROTATING_TYPES[currentIndex]}
+                  </span>{" "}
+                  from boarding to payoff.
+                </motion.p>
+              </AnimatePresence>
             </div>
 
-            {/* Right: Feature cards */}
-            <div className="hidden lg:grid grid-cols-1 gap-4">
-              {[
-                {
-                  icon: Shield,
-                  title: "Compliance-First",
-                  desc: "State & federal regulatory compliance baked into every process",
-                },
-                {
-                  icon: BarChart3,
-                  title: "Real-Time Dashboards",
-                  desc: "24/7 investor portal with live portfolio analytics and reporting",
-                },
-                {
-                  icon: Clock,
-                  title: "End-to-End Servicing",
-                  desc: "From loan boarding to payoff — we handle the entire lifecycle",
-                },
-              ].map((item, i) => (
-                <div
-                  key={item.title}
-                  className="flex items-start gap-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5 hover:bg-white/[0.08] transition-colors"
-                  style={{ animationDelay: `${i * 0.15}s` }}
-                >
-                  <div className="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center shrink-0">
-                    <item.icon className="w-5 h-5 text-emerald-400" />
-                  </div>
-                  <div>
-                    <h3 className="font-heading font-semibold text-white text-sm mb-1">
-                      {item.title}
-                    </h3>
-                    <p className="text-white/50 text-sm leading-relaxed">
-                      {item.desc}
-                    </p>
-                  </div>
+            <p
+              className="hero-in mb-10 max-w-xl text-lg leading-relaxed text-pearl/55"
+              style={{ animationDelay: "280ms" }}
+            >
+              Peace of mind, transparency, and efficiency for individual
+              investors, private lenders, hedge funds, and investment
+              companies. California-licensed brokerage on file.
+            </p>
+
+            {/* Dual audience CTAs */}
+            <div
+              className="hero-in flex flex-col gap-4 sm:flex-row"
+              style={{ animationDelay: "360ms" }}
+            >
+              <Link href="/lenders" className="btn-jade group">
+                I&apos;m a Lender
+                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
+              <Link href="/investors" className="btn-ghost-light group">
+                I&apos;m an Investor
+                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
+            </div>
+
+            {/* Inline trust strip */}
+            <div
+              className="hero-in mt-14 flex flex-wrap items-center gap-x-7 gap-y-3 text-sm text-pearl/50"
+              style={{ animationDelay: "460ms" }}
+            >
+              <span>
+                <span className="font-semibold text-pearl">$150M+</span> serviced
+              </span>
+              <span className="h-4 w-px bg-pearl/15" />
+              <span>
+                <span className="font-semibold text-pearl">500+</span> active loans
+              </span>
+              <span className="h-4 w-px bg-pearl/15" />
+              <span>
+                <span className="font-semibold text-pearl">99.8%</span> payment accuracy
+              </span>
+            </div>
+          </div>
+
+          {/* Right: Feature cards */}
+          <div className="hidden lg:grid grid-cols-1 gap-4">
+            {[
+              {
+                icon: Shield,
+                title: "Compliance-First",
+                desc: "Civil Code §2924, HBOR, RESPA, and TILA baked into every workflow",
+              },
+              {
+                icon: BarChart3,
+                title: "GAAP-Aligned Reporting",
+                desc: "Monthly statements your CPA, fund admin, and auditor will accept",
+              },
+              {
+                icon: Clock,
+                title: "48-Hour Demand Turnaround",
+                desc: "Payoff demands and beneficiary statements out the door fast",
+              },
+            ].map((item, i) => (
+              <div
+                key={item.title}
+                className="hero-in flex items-start gap-4 rounded-xl border border-pearl/10 bg-pearl/[0.04] p-5 backdrop-blur-sm transition-colors hover:bg-pearl/[0.08]"
+                style={{ animationDelay: `${520 + i * 90}ms` }}
+              >
+                <div className="w-10 h-10 rounded-lg bg-jade-500/15 flex items-center justify-center shrink-0">
+                  <item.icon className="w-5 h-5 text-jade-300" />
                 </div>
-              ))}
-            </div>
+                <div>
+                  <h3 className="font-heading font-semibold text-pearl text-sm mb-1">
+                    {item.title}
+                  </h3>
+                  <p className="text-pearl/55 text-sm leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
+
+      {/* Scroll cue */}
+      <div className="pointer-events-none absolute bottom-7 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-pearl/40 md:flex">
+        <span className="text-[10px] font-medium uppercase tracking-[0.25em]">
+          Scroll
+        </span>
+        <ChevronDown className="h-4 w-4 motion-safe:animate-scroll-cue" />
+      </div>
+
+      {/* Bottom hairline */}
+      <div className="hairline-jade absolute inset-x-0 bottom-0 h-px" />
     </section>
   );
 }

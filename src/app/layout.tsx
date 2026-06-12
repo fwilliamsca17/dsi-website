@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import { Inter, League_Spartan } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { OrganizationJsonLd, LocalBusinessJsonLd, WebSiteJsonLd } from "@/components/seo/JsonLd";
+import {
+  OrganizationJsonLd,
+  LocalBusinessJsonLd,
+  WebSiteJsonLd,
+  FrankWilliamsJsonLd,
+} from "@/components/seo/JsonLd";
 import "./globals.css";
 
 const inter = Inter({
@@ -57,9 +62,9 @@ export const metadata: Metadata = {
       "Southern California's trusted private loan servicer. End-to-end servicing from loan setup to distressed asset resolution. Investor dashboards, ACH processing, and full compliance.",
     images: [
       {
-        url: "/images/dsi-logo.png",
-        width: 600,
-        height: 206,
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
         alt: "Direct Servicing Initiative — Private Loan Servicing",
       },
     ],
@@ -69,8 +74,20 @@ export const metadata: Metadata = {
     title: "Direct Servicing Initiative | Private Loan Servicing",
     description:
       "Compliant, transparent loan servicing for private lenders and investors in Southern California.",
-    images: ["/images/dsi-logo.png"],
+    images: ["/opengraph-image"],
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  category: "Finance",
   alternates: {
     canonical: "https://trustdsi.com",
   },
@@ -79,6 +96,12 @@ export const metadata: Metadata = {
     "geo.placename": "West Covina",
     "geo.position": "34.0686;-117.9390",
     "ICBM": "34.0686, -117.9390",
+    // Search engine verification placeholders — fill in console codes when issued.
+    // "google-site-verification": "[HUMAN verify — Google Search Console]",
+    // "msvalidate.01": "[HUMAN verify — Bing Webmaster Tools]",
+    // "yandex-verification": "[HUMAN verify — Yandex Webmaster]",
+    // "p:domain_verify": "[HUMAN verify — Pinterest]",
+    // "facebook-domain-verification": "[HUMAN verify — Meta Business Manager]",
   },
 };
 
@@ -91,6 +114,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${leagueSpartan.variable}`}>
       <body className="font-sans antialiased">
         <OrganizationJsonLd />
+        <FrankWilliamsJsonLd />
         <LocalBusinessJsonLd />
         <WebSiteJsonLd />
         <Header />

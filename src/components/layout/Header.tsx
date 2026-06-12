@@ -1,25 +1,40 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, ChevronDown, Phone } from "lucide-react";
 import { NAV_LINKS, COMPANY } from "@/lib/constants";
 
-
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
+
+  // Glass intensity ramps in once the user scrolls off the hero atmosphere.
+  // While at top, the header floats over the nocturne — barely there.
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-surface-300">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-ink-950/85 backdrop-blur-xl border-b border-pearl/10"
+          : "bg-transparent border-b border-transparent"
+      }`}
+    >
       {/* Top bar */}
-      <div className="bg-slate-700 text-white/80 text-xs py-1.5">
+      <div className={`text-pearl/70 text-xs py-1.5 transition-colors ${scrolled ? "bg-ink-950/60" : "bg-ink-950/30 backdrop-blur-sm"}`}>
         <div className="section-padding">
           <div className="max-container flex justify-end items-center">
             <a
               href={`tel:${COMPANY.phone}`}
-              className="flex items-center gap-1.5 hover:text-white transition-colors"
+              className="flex items-center gap-1.5 hover:text-jade-300 transition-colors"
             >
               <Phone className="w-3 h-3" />
               {COMPANY.phone}
@@ -38,7 +53,7 @@ export function Header() {
               alt="Direct Servicing Initiative"
               width={180}
               height={62}
-              className="h-10 w-auto"
+              className="h-10 w-auto brightness-0 invert"
               priority
             />
           </Link>
@@ -54,7 +69,7 @@ export function Header() {
               >
                 <Link
                   href={link.href}
-                  className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-body hover:text-slate-700 transition-colors rounded-lg hover:bg-surface-100"
+                  className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-pearl/80 hover:text-jade-300 transition-colors rounded-lg"
                 >
                   {link.label}
                   {link.children && <ChevronDown className="w-3.5 h-3.5" />}
@@ -62,12 +77,12 @@ export function Header() {
 
                 {link.children && openDropdown === link.label && (
                   <div className="absolute top-full left-0 pt-2">
-                    <div className="bg-white rounded-xl shadow-xl shadow-slate-700/10 border border-surface-300 py-2 min-w-[240px]">
+                    <div className="bg-ink-950/95 backdrop-blur-xl rounded-xl shadow-2xl shadow-ink-950/40 border border-pearl/10 py-2 min-w-[280px]">
                       {link.children.map((child) => (
                         <Link
                           key={child.label}
                           href={child.href}
-                          className="block px-4 py-2.5 text-sm text-body hover:text-slate-700 hover:bg-surface-100 transition-colors"
+                          className="block px-4 py-2.5 text-sm text-pearl/80 hover:text-jade-300 hover:bg-pearl/[0.04] transition-colors"
                         >
                           {child.label}
                         </Link>
@@ -81,13 +96,13 @@ export function Header() {
 
           {/* CTA + mobile toggle */}
           <div className="flex items-center gap-3">
-            <Link href="/contact" className="btn-primary hidden lg:inline-flex">
+            <Link href="/contact" className="hidden lg:inline-flex btn-jade !px-5 !py-2.5 text-sm">
               Get Started
             </Link>
 
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden p-2 text-slate-700"
+              className="lg:hidden p-2 text-pearl"
               aria-label="Toggle menu"
             >
               {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -98,14 +113,14 @@ export function Header() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden bg-white border-t border-surface-300">
+        <div className="lg:hidden bg-ink-950/95 backdrop-blur-xl border-t border-pearl/10">
           <div className="section-padding py-6 space-y-1">
             {NAV_LINKS.map((link) => (
               <div key={link.label}>
                 <Link
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="block px-4 py-3 text-sm font-medium text-body hover:text-slate-700 hover:bg-surface-100 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-sm font-medium text-pearl/80 hover:text-jade-300 hover:bg-pearl/[0.04] rounded-lg transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -116,7 +131,7 @@ export function Header() {
                         key={child.label}
                         href={child.href}
                         onClick={() => setMobileOpen(false)}
-                        className="block px-4 py-2 text-sm text-body/70 hover:text-slate-700 transition-colors"
+                        className="block px-4 py-2 text-sm text-pearl/60 hover:text-jade-300 transition-colors"
                       >
                         {child.label}
                       </Link>
@@ -129,13 +144,18 @@ export function Header() {
               <Link
                 href="/contact"
                 onClick={() => setMobileOpen(false)}
-                className="btn-primary w-full justify-center"
+                className="btn-jade w-full"
               >
                 Get Started
               </Link>
             </div>
           </div>
         </div>
+      )}
+
+      {/* Hairline jade accent — visible when scrolled */}
+      {scrolled && (
+        <div className="hairline-jade absolute inset-x-0 bottom-0 h-px" />
       )}
     </header>
   );

@@ -10,11 +10,15 @@
   }
 
   body {
-    @apply text-body bg-white;
+    @apply text-body bg-white font-sans;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading font-semibold text-slate-700;
+  }
+
+  ::selection {
+    @apply bg-jade-500/30 text-slate-700;
   }
 }
 
@@ -23,18 +27,23 @@
     @apply px-5 sm:px-8 lg:px-12;
   }
 
+  .section-padding-y {
+    @apply py-16 md:py-20 lg:py-section;
+  }
+
   .max-container {
     @apply max-w-7xl mx-auto;
   }
 
   .eyebrow {
-    @apply text-label font-sans uppercase tracking-widest text-emerald-600 font-semibold;
+    @apply text-label font-sans uppercase tracking-widest text-jade-600 font-semibold;
   }
 
+  /* ────────── Buttons ────────── */
   .btn-primary {
-    @apply inline-flex items-center gap-2 bg-emerald-600 text-white px-7 py-3.5 rounded-lg
-           font-medium text-sm hover:bg-emerald-700 transition-all duration-200
-           shadow-lg shadow-emerald-600/20 hover:shadow-emerald-600/30;
+    @apply inline-flex items-center justify-center gap-2 bg-jade-600 text-white px-7 py-3.5 rounded-lg
+           font-medium text-sm hover:bg-jade-700 transition-all duration-200
+           shadow-lg shadow-jade-600/20 hover:shadow-jade-600/30;
   }
 
   .btn-secondary {
@@ -48,21 +57,123 @@
   }
 
   .btn-ghost {
-    @apply inline-flex items-center gap-2 text-emerald-600 font-medium text-sm
-           hover:text-emerald-700 transition-colors;
+    @apply inline-flex items-center gap-2 text-jade-600 font-medium text-sm
+           hover:text-jade-700 transition-colors;
   }
 
+  /* Premium jade CTA — sister of CDF's btn-champagne. Used on dark hero atmospheres. */
+  .btn-jade {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 font-semibold tracking-wide;
+    color: #021420;
+    background-image: linear-gradient(120deg, #A7F3D0, #10B981);
+    box-shadow: 0 12px 32px -10px rgba(16, 185, 129, 0.5);
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s;
+  }
+  .btn-jade:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 44px -12px rgba(16, 185, 129, 0.62);
+  }
+
+  /* Ghost CTA over dark atmospheric backgrounds */
+  .btn-ghost-light {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 font-semibold tracking-wide text-pearl;
+    border: 1px solid rgba(234, 244, 241, 0.22);
+    background: rgba(234, 244, 241, 0.04);
+    backdrop-filter: blur(6px);
+    transition: border-color 0.3s, color 0.3s, transform 0.3s;
+  }
+  .btn-ghost-light:hover {
+    border-color: rgba(110, 231, 183, 0.7);
+    color: #A7F3D0;
+    transform: translateY(-2px);
+  }
+
+  /* ────────── Cards ────────── */
   .card {
     @apply bg-white rounded-xl border border-surface-300 p-8
            hover:shadow-lg hover:shadow-slate-700/5 transition-all duration-300;
   }
 
   .card-dark {
-    @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8;
+    @apply bg-pearl/[0.04] backdrop-blur-sm border border-pearl/10 rounded-xl p-8;
   }
 
+  /* ────────── Text treatments ────────── */
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-emerald-500 to-emerald-700;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-jade-400 to-jade-600;
+  }
+
+  /* Premium jade gradient text — sister of CDF's text-champagne-gradient.
+     Used for accent words in display headings on dark atmospheric heroes. */
+  .text-jade-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(118deg, #D1FAE5 0%, #6EE7B7 45%, #10B981 100%);
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   Phase 2 — Institutional Nocturne (hero atmosphere + entrance)
+   DSI Jade variant. Same architectural recipe as CDF's gold
+   nocturne, recolored for the cool jade temperature.
+   ────────────────────────────────────────────────────────────── */
+@layer components {
+  /* Cinematic layered mesh: slate-teal + jade light sources over ink */
+  .hero-atmosphere {
+    background-color: #041420;
+    background-image:
+      radial-gradient(60% 50% at 72% 16%, rgba(5, 61, 87, 0.55), transparent 62%),
+      radial-gradient(55% 45% at 10% 90%, rgba(16, 185, 129, 0.14), transparent 58%),
+      radial-gradient(90% 70% at 50% 122%, rgba(2, 8, 18, 0.9), transparent 70%),
+      linear-gradient(158deg, #041420 0%, #052035 58%, #020812 100%);
+  }
+
+  /* Drifting soft light source for subtle life */
+  .hero-glow {
+    background: radial-gradient(circle at center, rgba(16, 185, 129, 0.22), transparent 60%);
+    filter: blur(44px);
+  }
+
+  /* Fine film grain — same SVG noise as CDF; overlay blend tints to scene. */
+  .hero-grain {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+  }
+
+  /* Vignette to focus the composition */
+  .hero-vignette {
+    background: radial-gradient(120% 90% at 50% 32%, transparent 52%, rgba(2, 6, 12, 0.68) 100%);
+  }
+
+  /* Jade hairline divider — DSI's signature horizontal accent */
+  .hairline-jade {
+    background: linear-gradient(90deg, transparent, rgba(110, 231, 183, 0.55), transparent);
+  }
+
+  /* Staggered hero entrance — opacity+rise for non-LCP elements */
+  .hero-in {
+    opacity: 0;
+    animation: hero-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  /* LCP-safe entrance — transform only, never gates opacity */
+  .hero-in-lcp {
+    animation: hero-in-lcp 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+
+@keyframes hero-in {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes hero-in-lcp {
+  from { transform: translateY(22px); }
+  to { transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-in,
+  .hero-in-lcp {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 }
 

@@ -2,113 +2,191 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight,
-  PieChart,
-  Bell,
+  Landmark,
+  Layers,
   FileText,
-  DollarSign,
-  Lock,
-  Clock,
-  BarChart3,
+  Users,
   CheckCircle2,
-  Shield,
+  PieChart,
+  BarChart3,
+  Bell,
+  Lock,
 } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { FAQ } from "@/components/sections/FAQ";
-import { FAQJsonLd } from "@/components/seo/JsonLd";
+import { FAQJsonLd, PageSeo } from "@/components/seo/JsonLd";
 import { INVESTOR_FAQS } from "@/lib/faqs";
 
 export const metadata: Metadata = {
   title: "For Investors",
   description:
-    "Real-time investor dashboards, monthly statements, portfolio analytics, and transparent reporting. DSI gives you complete visibility into your investments.",
+    "Self-directed IRA-compliant servicing, fractionalized note distributions, K-1 supporting schedules, GAAP-aligned statements, and audit support. DSI delivers the reporting institutional investors expect — to private-money investors.",
 };
+
+// Real investor pain — not "show me a dashboard." The actual workflow
+// issues that make existing servicers feel amateur to a family office,
+// fund LP, or sophisticated individual note investor.
+const investorProblems = [
+  {
+    icon: Landmark,
+    title: "Self-Directed IRA Compliance",
+    pain: "Notes held inside a self-directed IRA (Equity Trust, Quest, Madison, etc.) need distributions routed to the custodian — not the beneficial owner. Mistakes trigger UBTI exposure and prohibited transaction risk.",
+    solution:
+      "DSI knows the major SDIRA custodians. Distributions route per the custodian's coding. 1099s are issued correctly. Annual fair market valuation forms supported on request.",
+  },
+  {
+    icon: Layers,
+    title: "Fractionalized Note Distributions",
+    pain: "Three investors on one $900K first-trust at 60/30/10 splits. Manual pro-rata math drifts every month, and one bad reconciliation triggers an SEC question.",
+    solution:
+      "DSI tracks every fractional interest at the loan level. Distributions calculated to the penny, reconciled before payout, audit trail visible per investor.",
+  },
+  {
+    icon: FileText,
+    title: "K-1 Supporting Schedules + Audit Support",
+    pain: "Fund LPs and family-office investors need K-1 supporting schedules with loan-level interest, fee, and gain detail. Generic servicers send a year-end summary and call it done.",
+    solution:
+      "DSI delivers K-1 supporting schedules, GAAP-aligned monthly statements, and direct read access for your fund admin or auditor during fieldwork. Built for funds and SMAs from day one.",
+  },
+  {
+    icon: Users,
+    title: "Beneficiary, Trust, and Estate Changes",
+    pain: "Death, divorce, trust transfer, or LLC restructure on a note holder — most servicers freeze the account for weeks while paperwork is reviewed.",
+    solution:
+      "DSI has standing workflows for beneficiary change, trust assignment, and probate transfer. Documentation requirements published in advance; processing in days, not weeks.",
+  },
+];
 
 const dashboardFeatures = [
   {
     icon: PieChart,
     title: "Portfolio Overview",
     description:
-      "See your entire portfolio at a glance — total invested, active loans, weighted average yield, and performance metrics.",
+      "Total invested, active loans, weighted yield, geographic exposure, and lien-position breakdown — all on one screen.",
   },
   {
     icon: BarChart3,
     title: "Loan-Level Detail",
     description:
-      "Drill into any individual loan: payment history, current balance, borrower status, property details, and LTV ratios.",
+      "Drill into any loan: payment history, current balance, LTV, borrower status, property type, and document vault.",
   },
   {
     icon: Bell,
-    title: "Real-Time Alerts",
+    title: "Event Alerts",
     description:
-      "Automated notifications for payments received, late payments, default events, payoffs, and maturity dates.",
-  },
-  {
-    icon: FileText,
-    title: "Monthly Statements",
-    description:
-      "Detailed monthly statements with income breakdowns, distribution calculations, and portfolio performance summaries.",
-  },
-  {
-    icon: DollarSign,
-    title: "Distribution Tracking",
-    description:
-      "Track every distribution: when it was calculated, when it was paid, and complete audit trails for reconciliation.",
+      "Automated notifications for payments received, late payments, default events, payoffs, and maturity dates — push and email.",
   },
   {
     icon: Lock,
-    title: "Secure Access",
+    title: "Custodian-Safe Access",
     description:
-      "Bank-level encryption, two-factor authentication, and role-based access controls protect your data 24/7.",
+      "Bank-level encryption, two-factor authentication, role-based access. SDIRA custodians get the read access they need without exposing your portfolio to them.",
   },
 ];
 
 const reportTypes = [
   "Monthly Performance Summary",
   "Loan-by-Loan Detail Report",
-  "Delinquency & Default Report",
-  "Distribution Calculation Report",
-  "Year-End Tax Package (1099s)",
+  "Pro-Rata Distribution Calculation",
+  "Delinquency & Default Status",
+  "K-1 Supporting Schedules (fund / SMA)",
+  "1098 and 1099-INT — delivered before January 31",
   "Portfolio Composition Analysis",
-  "Maturity Schedule Report",
-  "Payoff & Prepayment Summary",
+  "Maturity Schedule (next 12 / 24 / 36 months)",
 ];
 
 export default function InvestorsPage() {
   return (
     <>
+      <PageSeo
+        title="For Investors | Direct Servicing Initiative"
+        description="Self-directed IRA-compliant servicing, fractionalized note distributions, K-1 supporting schedules, GAAP-aligned statements, and audit support for private note investors."
+        path="/investors"
+        crumbs={[
+          { name: "Home", href: "/" },
+          { name: "For Investors", href: "/investors" },
+        ]}
+      />
       <FAQJsonLd faqs={INVESTOR_FAQS} />
       {/* Hero */}
-      <section className="bg-gradient-slate pt-32 pb-20 lg:pt-40 lg:pb-28">
+      <section className="hero-atmosphere relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="section-padding">
           <div className="max-container max-w-4xl">
             <FadeIn>
-              <p className="eyebrow !text-emerald-400 mb-4">For Investors</p>
-              <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-display-xl text-white mb-6 text-balance">
-                Complete Visibility. Total Confidence.
+              <p className="eyebrow !text-jade-300 mb-4">For Investors</p>
+              <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-display-xl text-pearl mb-6 text-balance">
+                Institutional-grade reporting.{" "}
+                <span className="text-jade-gradient">On private notes.</span>
               </h1>
-              <p className="text-white/60 text-lg lg:text-xl leading-relaxed max-w-2xl">
-                DSI provides institutional-grade investor reporting and 24/7
-                dashboard access, so you always know exactly how your investments
-                are performing.
+              <p className="text-pearl/60 text-lg lg:text-xl leading-relaxed max-w-2xl">
+                Self-directed IRAs, fractionalized notes, fund SMAs, and family
+                offices — DSI runs the servicing math, the tax docs, and the
+                audit support that sophisticated investors expect from a private
+                note position.
               </p>
             </FadeIn>
           </div>
         </div>
       </section>
 
-      {/* Dashboard Features */}
+      {/* Investor Problems */}
       <section className="bg-white py-20 lg:py-section-lg">
         <div className="section-padding">
           <div className="max-container">
             <SectionHeading
-              eyebrow="Investor Dashboard"
-              title="Everything You Need, One Login Away"
-              description="Our investor portal gives you real-time access to every aspect of your portfolio."
+              eyebrow="Why Investors Move to DSI"
+              title="The Workflow Problems That Make Other Servicers Feel Amateur"
+              description="A dashboard is table stakes. These are the structural issues that drive sophisticated investors to switch."
               centered
             />
 
-            <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-6">
+              {investorProblems.map((problem, i) => (
+                <FadeIn key={problem.title} delay={i * 0.08}>
+                  <div className="card flex flex-col gap-5 h-full">
+                    <div className="flex gap-4 items-start">
+                      <div className="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center shrink-0">
+                        <problem.icon className="w-6 h-6 text-emerald-600" />
+                      </div>
+                      <h3 className="font-heading font-semibold text-lg text-slate-700 mt-2">
+                        {problem.title}
+                      </h3>
+                    </div>
+                    <div className="space-y-3 text-sm leading-relaxed">
+                      <p>
+                        <span className="font-semibold text-slate-600">
+                          The pain:
+                        </span>{" "}
+                        <span className="text-body/70">{problem.pain}</span>
+                      </p>
+                      <p>
+                        <span className="font-semibold text-emerald-700">
+                          DSI:
+                        </span>{" "}
+                        <span className="text-body/80">{problem.solution}</span>
+                      </p>
+                    </div>
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Dashboard Features */}
+      <section className="bg-surface-100 py-20 lg:py-section-lg">
+        <div className="section-padding">
+          <div className="max-container">
+            <SectionHeading
+              eyebrow="Investor Portal"
+              title="Built for the Way You Actually Work"
+              description="Real-time access for you. Read-only role access for your CPA, fund admin, or SDIRA custodian. No portal logins shared across emails."
+              centered
+            />
+
+            <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {dashboardFeatures.map((feature, i) => (
                 <FadeIn key={feature.title} delay={i * 0.08}>
                   <div className="card h-full">
@@ -130,30 +208,30 @@ export default function InvestorsPage() {
       </section>
 
       {/* Reporting */}
-      <section className="bg-surface-100 py-20 lg:py-section-lg">
+      <section className="bg-white py-20 lg:py-section-lg">
         <div className="section-padding">
           <div className="max-container">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <FadeIn>
                 <p className="eyebrow mb-4">Reporting Suite</p>
                 <h2 className="font-heading text-display text-slate-700 mb-6">
-                  Reports that give you confidence
+                  Statements your CPA won&apos;t apologize for
                 </h2>
                 <p className="text-body/80 leading-relaxed mb-8">
-                  Whether you&apos;re an individual investor with 5 loans or an
-                  institution with 500, DSI delivers the reporting clarity you
-                  need to make informed decisions and satisfy your own reporting
-                  requirements.
+                  Whether you hold five notes in a self-directed IRA or run a
+                  $50M private debt fund, DSI&apos;s reporting suite delivers
+                  what your CPA, your fund admin, and your auditor actually
+                  ask for — without the year-end scramble.
                 </p>
                 <Link href="/contact" className="btn-primary">
-                  Request Sample Reports <ArrowRight className="w-4 h-4" />
+                  Request a Sample Package <ArrowRight className="w-4 h-4" />
                 </Link>
               </FadeIn>
 
               <FadeIn delay={0.15}>
-                <div className="bg-white rounded-2xl border border-surface-300 p-8">
+                <div className="bg-surface-100 rounded-2xl border border-surface-300 p-8">
                   <h3 className="font-heading font-semibold text-sm text-slate-700 mb-5 uppercase tracking-wider">
-                    Available Reports
+                    Reports DSI Delivers
                   </h3>
                   <ul className="space-y-3">
                     {reportTypes.map((report) => (
@@ -170,60 +248,22 @@ export default function InvestorsPage() {
         </div>
       </section>
 
-      {/* Trust section */}
-      <section className="bg-white py-20 lg:py-section-lg">
-        <div className="section-padding">
-          <div className="max-container text-center">
-            <FadeIn>
-              <div className="w-16 h-16 rounded-2xl bg-emerald-50 flex items-center justify-center mx-auto mb-6">
-                <Shield className="w-8 h-8 text-emerald-600" />
-              </div>
-              <h2 className="font-heading text-heading-xl text-slate-700 mb-4">
-                Your Trust is Our Foundation
-              </h2>
-              <p className="text-body/70 leading-relaxed max-w-2xl mx-auto mb-8">
-                As a family-owned company, we understand that every dollar you
-                invest carries trust. DSI is built on the principle that
-                transparency eliminates uncertainty, and precision builds
-                confidence.
-              </p>
-            </FadeIn>
-
-            <FadeIn delay={0.15}>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
-                {[
-                  { icon: Clock, label: "24/7 Portal Access" },
-                  { icon: Shield, label: "Bank-Level Security" },
-                  { icon: FileText, label: "Automated Statements" },
-                ].map((item) => (
-                  <div key={item.label} className="text-center">
-                    <item.icon className="w-8 h-8 text-emerald-600 mx-auto mb-2" />
-                    <span className="text-sm font-medium text-slate-700">
-                      {item.label}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
       <FAQ faqs={INVESTOR_FAQS} title="Investor FAQs" />
 
       {/* CTA */}
-      <section className="bg-gradient-slate py-16 lg:py-20">
+      <section className="hero-atmosphere relative overflow-hidden py-16 lg:py-20">
         <div className="section-padding">
           <div className="max-container text-center">
             <FadeIn>
-              <h2 className="font-heading text-heading-xl text-white mb-4">
-                See the investor experience firsthand
+              <h2 className="font-heading text-heading-xl text-pearl mb-4">
+                See the investor experience firsthand.
               </h2>
-              <p className="text-white/60 mb-8 max-w-lg mx-auto">
-                Request a demo of our investor dashboard and reporting suite.
+              <p className="text-pearl/60 mb-8 max-w-lg mx-auto">
+                Request a sample monthly statement and K-1 supporting schedule.
+                Five-minute review. Tells you everything you need.
               </p>
               <Link href="/contact" className="btn-primary">
-                Request a Demo <ArrowRight className="w-4 h-4" />
+                Request Sample Reports <ArrowRight className="w-4 h-4" />
               </Link>
             </FadeIn>
           </div>

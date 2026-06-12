@@ -2,87 +2,104 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight,
-  Shield,
-  Eye,
-  Users,
-  Zap,
-  HeartHandshake,
-  Lock,
+  UserCheck,
+  Clock,
+  Calendar,
+  FileBarChart,
+  MapPin,
+  ShieldCheck,
   CheckCircle2,
 } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { PageSeo } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
   title: "Why DSI",
   description:
-    "Why choose Direct Servicing Initiative for your private loan servicing needs. Compliance-first, transparent, family-owned, and technology-enabled.",
+    "Six operational commitments that distinguish DSI from generic loan servicers: named account managers, 48-hour demand turnaround, January 31 tax docs, GAAP-aligned statements, California-native compliance, and segregated trust accounting.",
 };
 
 const reasons = [
   {
-    icon: Shield,
-    title: "Compliance-First Culture",
-    description:
-      "Every process is built around state and federal compliance. TILA, RESPA, and state-specific regulations are embedded in our workflows — not bolted on as an afterthought.",
+    icon: UserCheck,
+    title: "A Named Account Manager, Not a Ticket Queue",
+    pain: "Most servicers route requests through a help desk. Your deal closes Friday; the demand statement arrives the following Wednesday.",
+    proof:
+      "Every DSI client is assigned a named account manager with a direct cell. Frank Williams sits on the escalation path of every account. We pick up the phone.",
   },
   {
-    icon: Eye,
-    title: "Radical Transparency",
-    description:
-      "Real-time dashboards, automated investor statements, and 24/7 portal access. You always know the status of every loan in your portfolio.",
+    icon: Clock,
+    title: "48-Hour Demand Turnaround",
+    pain: "A late payoff demand blows escrow. A delayed beneficiary statement loses the refi. Industry-standard turnaround is 5–7 business days.",
+    proof:
+      "DSI targets sub-48-hour turnaround on payoff demands, beneficiary statements, and demand letters. Per-diem interest grids included. Friday 4pm requests are typically out by Monday COB.",
   },
   {
-    icon: Users,
-    title: "Family-Owned Values",
-    description:
-      "We are a family-owned company that operates with the integrity and accountability that comes from personal ownership. Your trust is personal to us.",
+    icon: Calendar,
+    title: "Tax Documents Before January 31 — Every Year",
+    pain: "Mid-February 1098s force investors and borrowers into extensions. Missing 1099-INTs trigger IRS correspondence audits.",
+    proof:
+      "DSI locks the tax package on December 28 and delivers 1098s and 1099-INTs before January 31. No exceptions, no scrambling — operational rhythm, not a promise.",
   },
   {
-    icon: Zap,
-    title: "Technology-Enabled",
-    description:
-      "ACH processing, automated SMS alerts, digital document management, and API-ready systems for seamless integration with your origination platform.",
+    icon: FileBarChart,
+    title: "GAAP-Aligned Monthly Statements",
+    pain: "Family offices and fund investors need statements an auditor will accept. Generic servicers deliver Excel exports that fail audit fieldwork.",
+    proof:
+      "DSI's monthly statements are GAAP-aligned with full audit trail. Auditors and fund admins get direct read access during fieldwork. K-1 supporting schedules delivered on demand.",
   },
   {
-    icon: HeartHandshake,
-    title: "Investor-Centric",
-    description:
-      "We treat every investor relationship as sacred. Custom reporting, dedicated support, and transparent fee structures — because your investors deserve the best.",
+    icon: MapPin,
+    title: "California-Native Compliance, Not a Customization",
+    pain: "National servicers learn California Civil Code §2924, the Homeowner Bill of Rights, and SB91 expensively — usually on your file.",
+    proof:
+      "DSI is built in West Covina by a California-licensed broker (DRE# 01979442) and licensed mortgage originator (NMLS# 1858674). RESPA, TILA, and California-specific compliance are the baseline of every workflow.",
   },
   {
-    icon: Lock,
-    title: "Institutional-Grade Security",
-    description:
-      "Bank-level encryption, SOC 2-aligned processes, and strict data governance protocols protect your information and your borrowers' data.",
+    icon: ShieldCheck,
+    title: "Segregated Trust Accounting",
+    pain: "Some servicers commingle escrow, impound, and investor funds in a single operating account. That's a CA Finance Lenders Law issue waiting to happen.",
+    proof:
+      "DSI holds escrow, impound, and investor funds in segregated trust accounts. Audit-trail receipts on every distribution. Reconciled monthly. Never touched by operating capital.",
   },
 ];
 
-const benefits = [
-  "Peace of mind knowing every loan is serviced compliantly",
-  "Transparency that builds trust with your investors",
-  "Efficiency that reduces your operational overhead",
-  "Technology that scales with your portfolio",
-  "A team that treats your business like family",
-  "Reporting that satisfies institutional requirements",
+const promiseList = [
+  "Every inbound request gets a same-day acknowledgment",
+  "Demands and payoff statements turned in 48 hours or less",
+  "1098s and 1099-INTs locked December 28, delivered by January 31",
+  "Monthly statements GAAP-aligned for audit acceptance",
+  "California-licensed brokerage on file — DRE# 01979442 / NMLS# 1858674",
+  "Trust accounts segregated and reconciled monthly",
 ];
 
 export default function WhyDSIPage() {
   return (
     <>
+      <PageSeo
+        title="Why DSI | Direct Servicing Initiative"
+        description="Six operational standards DSI publishes and is held to: named account managers, 48-hour demand turnaround, January 31 tax docs, GAAP-aligned statements, California-native compliance, segregated trust accounting."
+        path="/why-dsi"
+        crumbs={[
+          { name: "Home", href: "/" },
+          { name: "Why DSI", href: "/why-dsi" },
+        ]}
+      />
       {/* Hero */}
-      <section className="bg-gradient-slate pt-32 pb-20 lg:pt-40 lg:pb-28">
+      <section className="hero-atmosphere relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="section-padding">
           <div className="max-container max-w-4xl">
             <FadeIn>
-              <p className="eyebrow !text-emerald-400 mb-4">Why DSI</p>
-              <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-display-xl text-white mb-6 text-balance">
-                Built for Trust. Designed for Scale.
+              <p className="eyebrow !text-jade-300 mb-4">Why DSI</p>
+              <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-display-xl text-pearl mb-6 text-balance">
+                The Standards.{" "}
+                <span className="text-jade-gradient">The Proof.</span>
               </h1>
-              <p className="text-white/60 text-lg lg:text-xl leading-relaxed max-w-2xl">
-                We combine the accountability of family ownership with the
-                sophistication of institutional servicing — delivering peace of
-                mind, transparency, and efficiency.
+              <p className="text-pearl/60 text-lg lg:text-xl leading-relaxed max-w-2xl">
+                Most servicers sell on adjectives — compliant, transparent,
+                trusted. DSI commits to operational standards a client can hold
+                us to. Six of them, with the evidence behind each.
               </p>
             </FadeIn>
           </div>
@@ -94,23 +111,42 @@ export default function WhyDSIPage() {
         <div className="section-padding">
           <div className="max-container">
             <SectionHeading
-              eyebrow="Our Difference"
-              title="What Sets DSI Apart"
+              eyebrow="Operational Standards"
+              title="Pain. Proof. Pattern."
+              description="Each standard is paired with the pain it eliminates and the operational pattern behind it."
               centered
             />
-            <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div className="mt-14 space-y-10">
               {reasons.map((reason, i) => (
-                <FadeIn key={reason.title} delay={i * 0.08}>
-                  <div className="card h-full">
-                    <div className="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center mb-5">
-                      <reason.icon className="w-6 h-6 text-emerald-600" />
+                <FadeIn key={reason.title} delay={i * 0.05}>
+                  <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-6 lg:gap-10 p-8 lg:p-10 bg-surface-100 rounded-2xl border border-surface-300">
+                    <div className="w-14 h-14 rounded-2xl bg-emerald-100 flex items-center justify-center shrink-0">
+                      <reason.icon className="w-7 h-7 text-emerald-700" />
                     </div>
-                    <h3 className="font-heading font-semibold text-lg text-slate-700 mb-2">
-                      {reason.title}
-                    </h3>
-                    <p className="text-sm text-body/70 leading-relaxed">
-                      {reason.description}
-                    </p>
+                    <div>
+                      <h3 className="font-heading font-bold text-xl text-slate-700 mb-4">
+                        {reason.title}
+                      </h3>
+                      <div className="space-y-3">
+                        <p className="text-sm">
+                          <span className="font-semibold text-slate-600">
+                            The pain:
+                          </span>{" "}
+                          <span className="text-body/70 leading-relaxed">
+                            {reason.pain}
+                          </span>
+                        </p>
+                        <p className="text-sm">
+                          <span className="font-semibold text-emerald-700">
+                            DSI&apos;s standard:
+                          </span>{" "}
+                          <span className="text-body/80 leading-relaxed">
+                            {reason.proof}
+                          </span>
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </FadeIn>
               ))}
@@ -119,7 +155,7 @@ export default function WhyDSIPage() {
         </div>
       </section>
 
-      {/* Benefits */}
+      {/* The DSI Promise */}
       <section className="bg-surface-100 py-20 lg:py-section-lg">
         <div className="section-padding">
           <div className="max-container">
@@ -127,25 +163,29 @@ export default function WhyDSIPage() {
               <FadeIn>
                 <p className="eyebrow mb-4">The DSI Promise</p>
                 <h2 className="font-heading text-display text-slate-700 mb-6">
-                  Simple and Direct — that&apos;s our promise
+                  Six commitments. Documented and reviewed quarterly.
                 </h2>
                 <p className="text-body/80 leading-relaxed mb-8">
-                  When you partner with DSI, you get a servicing team that
-                  operates like an extension of your own business. We handle the
-                  complexity so you can focus on growing.
+                  Each operational standard is reviewed quarterly with our
+                  account managers, our trust accountants, and Frank. When we
+                  miss, we tell you. When the pattern slips, we fix the
+                  process — not the report.
                 </p>
+                <Link href="/contact" className="btn-primary">
+                  Hold Us To It <ArrowRight className="w-4 h-4" />
+                </Link>
               </FadeIn>
 
               <FadeIn delay={0.15}>
                 <div className="bg-white rounded-2xl border border-surface-300 p-8">
                   <h3 className="font-heading font-semibold text-sm text-slate-700 mb-5 uppercase tracking-wider">
-                    What You Get
+                    Standards We Publish
                   </h3>
                   <ul className="space-y-3">
-                    {benefits.map((benefit) => (
-                      <li key={benefit} className="flex items-start gap-3">
+                    {promiseList.map((p) => (
+                      <li key={p} className="flex items-start gap-3">
                         <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
-                        <span className="text-sm text-body/80">{benefit}</span>
+                        <span className="text-sm text-body/80">{p}</span>
                       </li>
                     ))}
                   </ul>
@@ -157,18 +197,19 @@ export default function WhyDSIPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-gradient-slate py-16 lg:py-20">
+      <section className="hero-atmosphere relative overflow-hidden py-16 lg:py-20">
         <div className="section-padding">
           <div className="max-container text-center">
             <FadeIn>
-              <h2 className="font-heading text-heading-xl text-white mb-4">
-                Experience the DSI difference
+              <h2 className="font-heading text-heading-xl text-pearl mb-4">
+                Hold a servicer to a standard they actually publish.
               </h2>
-              <p className="text-white/60 mb-8 max-w-lg mx-auto">
-                Let us show you how simple and direct loan servicing can be.
+              <p className="text-pearl/60 mb-8 max-w-lg mx-auto">
+                Talk to DSI about what your portfolio needs — and what we&apos;ll
+                commit to in writing.
               </p>
               <Link href="/contact" className="btn-primary">
-                Get Started <ArrowRight className="w-4 h-4" />
+                Start the Conversation <ArrowRight className="w-4 h-4" />
               </Link>
             </FadeIn>
           </div>

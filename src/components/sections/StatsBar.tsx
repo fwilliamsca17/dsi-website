@@ -1,21 +1,37 @@
 "use client";
 
 import { STATS } from "@/lib/constants";
-import { FadeIn } from "@/components/ui/FadeIn";
+import { StatCounter } from "@/components/ui/StatCounter";
 
 export function StatsBar() {
   return (
-    <section className="bg-white border-b border-surface-300">
-      <div className="section-padding py-12 lg:py-16">
+    <section className="relative overflow-hidden bg-ink-950 py-16 md:py-20">
+      {/* Jade dot pattern */}
+      <div
+        className="absolute inset-0 opacity-[0.05]"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, #6EE7B7 1px, transparent 1px)",
+          backgroundSize: "24px 24px",
+        }}
+      />
+      {/* Soft jade glow continuing the hero atmosphere */}
+      <div className="hero-glow pointer-events-none absolute -top-1/2 left-1/2 h-[40vw] w-[80vw] -translate-x-1/2 opacity-60" />
+      {/* Jade hairline top edge */}
+      <div className="hairline-jade absolute inset-x-0 top-0 h-px" />
+
+      <div className="relative z-10 section-padding">
         <div className="max-container">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-            {STATS.map((stat, i) => (
-              <FadeIn key={stat.label} delay={i * 0.1} className="text-center">
-                <div className="text-3xl lg:text-4xl font-heading font-bold text-slate-700 mb-1">
-                  {stat.value}
-                </div>
-                <div className="text-sm text-body/60">{stat.label}</div>
-              </FadeIn>
+          <div className="grid grid-cols-2 gap-8 md:grid-cols-4 md:gap-4">
+            {STATS.map((stat) => (
+              <StatCounter
+                key={stat.label}
+                value={stat.value}
+                prefix={stat.prefix}
+                suffix={stat.suffix}
+                label={stat.label}
+                decimals={stat.decimals}
+              />
             ))}
           </div>
         </div>

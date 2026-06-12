@@ -1,50 +1,53 @@
 import {
-  Shield,
-  Eye,
-  Users,
-  Zap,
-  HeartHandshake,
-  Lock,
+  UserCheck,
+  Clock,
+  Calendar,
+  FileBarChart,
+  MapPin,
+  ShieldCheck,
 } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FadeIn } from "@/components/ui/FadeIn";
 
+// Real differentiators, not virtues. Each one is a commitment we live by
+// and a proof of how. Generic "compliance-first" / "family-owned" copy
+// reads as marketing — these read as operational standards.
 const reasons = [
   {
-    icon: Shield,
-    title: "Compliance-First Culture",
-    description:
-      "Every process is built around state and federal compliance. TILA, RESPA, and state-specific regulations are embedded in our workflows.",
+    icon: UserCheck,
+    title: "A Named Account Manager",
+    proof:
+      "Every client gets a dedicated account manager with a direct line — and Frank Williams on the escalation path. No ticket queues.",
   },
   {
-    icon: Eye,
-    title: "Radical Transparency",
-    description:
-      "Real-time dashboards, automated investor statements, and 24/7 portal access. You always know the status of every loan.",
+    icon: Clock,
+    title: "48-Hour Demand Turnaround",
+    proof:
+      "Payoff demands, beneficiary statements, and demand letters target sub-48-hour turnaround with per-diem interest grids included.",
   },
   {
-    icon: Users,
-    title: "Family-Owned Values",
-    description:
-      "We are a family-owned company that operates with the integrity and accountability that comes from personal ownership. Your trust is personal to us.",
+    icon: Calendar,
+    title: "Tax Docs by January 31",
+    proof:
+      "1098s and 1099-INTs delivered to investors and borrowers before January 31, every year — locked December 28.",
   },
   {
-    icon: Zap,
-    title: "Technology-Enabled",
-    description:
-      "ACH processing, automated SMS alerts, digital document management, and API-ready systems for seamless integration.",
+    icon: FileBarChart,
+    title: "GAAP-Aligned Statements",
+    proof:
+      "Monthly statements your auditor will accept. Direct read access for auditors and fund admins during fieldwork.",
   },
   {
-    icon: HeartHandshake,
-    title: "Investor-Centric",
-    description:
-      "We treat every investor relationship as sacred. Custom reporting, dedicated support, and transparent fee structures.",
+    icon: MapPin,
+    title: "California-Native Compliance",
+    proof:
+      "Civil Code §2924, Homeowner Bill of Rights, SB91, RESPA, and TILA are the baseline — not a customization. Built by California-licensed brokers.",
   },
   {
-    icon: Lock,
-    title: "Institutional-Grade Security",
-    description:
-      "Bank-level encryption, SOC 2-aligned processes, and strict data governance protocols protect your information.",
+    icon: ShieldCheck,
+    title: "Segregated Trust Accounting",
+    proof:
+      "Escrow, impound, and investor funds held in segregated trust accounts. Audit-trail receipts on every distribution. Never commingled.",
   },
 ];
 
@@ -55,8 +58,8 @@ export function WhyDSI() {
         <div className="max-container">
           <SectionHeading
             eyebrow="Why DSI"
-            title="Built for Trust, Designed for Scale"
-            description="We combine the accountability of family ownership with the sophistication of institutional servicing."
+            title="The Standards. The Proof."
+            description="Six commitments we live by — and the operational evidence behind each one."
             centered
           />
 
@@ -64,7 +67,7 @@ export function WhyDSI() {
             {reasons.map((reason, i) => (
               <FadeIn key={reason.title} delay={i * 0.08}>
                 <div className="flex gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-surface-100 flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-lg bg-emerald-50 flex items-center justify-center shrink-0">
                     <reason.icon className="w-5 h-5 text-emerald-600" />
                   </div>
                   <div>
@@ -72,7 +75,7 @@ export function WhyDSI() {
                       {reason.title}
                     </h3>
                     <p className="text-sm text-body/70 leading-relaxed">
-                      {reason.description}
+                      {reason.proof}
                     </p>
                   </div>
                 </div>
