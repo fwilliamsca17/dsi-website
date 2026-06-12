@@ -360,7 +360,9 @@ export function TeamJsonLd() {
     "@type": "Person",
     name: member.name,
     jobTitle: member.title,
-    image: `https://trustdsi.com${member.image}`,
+    ...(member.image
+      ? { image: `https://trustdsi.com${member.image}` }
+      : {}),
     worksFor: { "@id": "https://trustdsi.com/#organization" },
     memberOf: {
       "@type": "Organization",

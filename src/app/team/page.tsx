@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, User } from "lucide-react";
 import { TEAM } from "@/lib/constants";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FadeIn } from "@/components/ui/FadeIn";
@@ -10,7 +10,7 @@ import { TeamJsonLd, PageSeo } from "@/components/seo/JsonLd";
 export const metadata: Metadata = {
   title: "Our Team",
   description:
-    "Meet the team behind Direct Servicing Initiative. Family-owned, investor-focused, and committed to excellence in private loan servicing.",
+    "Meet the team behind Direct Servicing Initiative. Founded by Frank Williams with Juan N. Williams as Broker of Record. Family-owned operations team handling every file from boarding through payoff.",
 };
 
 export default function TeamPage() {
@@ -52,8 +52,11 @@ export default function TeamPage() {
             <FadeIn>
               <div className="max-w-2xl mx-auto text-center mb-16">
                 <div className="w-48 h-48 rounded-full overflow-hidden mx-auto mb-6 border-4 border-surface-200">
+                  {/* Founder always has a headshot — the assertion narrows the
+                      string | null union; if a future migration nulls it, the
+                      build will fail loudly rather than rendering a broken img. */}
                   <Image
-                    src={TEAM[0].image}
+                    src={TEAM[0].image as string}
                     alt={TEAM[0].name}
                     width={192}
                     height={192}
@@ -74,14 +77,18 @@ export default function TeamPage() {
               {TEAM.slice(1).map((member, i) => (
                 <FadeIn key={member.name} delay={i * 0.08}>
                   <div className="text-center">
-                    <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 border-3 border-surface-200">
-                      <Image
-                        src={member.image}
-                        alt={member.name}
-                        width={128}
-                        height={128}
-                        className="w-full h-full object-cover"
-                      />
+                    <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 border-3 border-surface-200 bg-emerald-50 flex items-center justify-center">
+                      {member.image ? (
+                        <Image
+                          src={member.image}
+                          alt={member.name}
+                          width={128}
+                          height={128}
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <User className="w-10 h-10 text-emerald-600/30" />
+                      )}
                     </div>
                     <h3 className="font-heading font-semibold text-sm text-slate-700 mb-0.5">
                       {member.name}

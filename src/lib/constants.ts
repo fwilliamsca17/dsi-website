@@ -11,6 +11,7 @@ export const COMPANY = {
   email: "info@trustdsi.com",
   address: "2648 E. Workman Ave., Suite 3001-288, West Covina, CA 91791",
   principal: "Frank Williams",
+  brokerOfRecord: "Juan N. Williams",
   dreLicense: "01979442",
   nmls: "1858674",
   social: {
@@ -120,7 +121,16 @@ export const STATS = [
   { value: 24, prefix: "", suffix: "/7", label: "Portal Access" },
 ];
 
-export const TEAM = [
+// Team — image may be null for licensed-but-not-customer-facing roles
+// (e.g. Broker of Record). UI components fall back to a placeholder
+// icon when image is null.
+export type TeamMember = {
+  name: string;
+  title: string;
+  image: string | null;
+};
+
+export const TEAM: TeamMember[] = [
   {
     name: "Frank Williams",
     title: "Principal",
@@ -155,6 +165,15 @@ export const TEAM = [
     name: "Ivy Verdad",
     title: "Financial Operations Manager",
     image: "/images/team/ivy-verdad.png",
+  },
+  {
+    // Broker of Record — the same licensed individual on file for both
+    // Capital Direct Funding and Direct Servicing Initiative. Listed at
+    // the end of the roster as a licensing/compliance role; no public
+    // headshot.
+    name: "Juan N. Williams",
+    title: "Broker of Record",
+    image: null,
   },
 ];
 

@@ -20,11 +20,13 @@ export function TeamPreview() {
           />
 
           <div className="mt-14 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8">
-            {TEAM.slice(0, 8).map((member, i) => (
+            {/* Homepage preview shows headshot members only — Broker of Record
+                (no photo) is listed on the full /team page. */}
+            {TEAM.filter((m) => m.image).slice(0, 8).map((member, i) => (
               <FadeIn key={member.name} delay={i * 0.05} className="text-center">
                 <div className="relative w-32 h-32 lg:w-36 lg:h-36 mx-auto mb-4 rounded-full overflow-hidden ring-4 ring-emerald-500/10 group-hover:ring-emerald-500/30 transition-all">
                   <Image
-                    src={member.image}
+                    src={member.image as string}
                     alt={member.name}
                     fill
                     sizes="(max-width: 1024px) 128px, 144px"
