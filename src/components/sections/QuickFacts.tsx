@@ -26,7 +26,7 @@ const FACTS = [
     icon: Calendar,
     label: "Founded",
     value:
-      "2024, by Frank Williams, CCIM (DRE# 01979442 / NMLS# 1858674).",
+      "2024, by Frank Williams. California-licensed brokerage with Juan N. Williams (DRE# 01115216) as Broker of Record.",
   },
   {
     icon: Shield,

@@ -15,7 +15,7 @@ import { PageSeo } from "@/components/seo/JsonLd";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Direct Servicing Initiative is a California-licensed loan servicer built in West Covina by Frank Williams (DRE# 01979442 / NMLS# 1858674). Institutional-grade servicing for the private lending industry.",
+    "Direct Servicing Initiative is a California-licensed loan servicer built in West Covina by Frank Williams. Institutional-grade servicing for the private lending industry, with Juan N. Williams (DRE# 01115216) as Broker of Record.",
 };
 
 const values = [
@@ -77,7 +77,7 @@ export default function AboutPage() {
     <>
       <PageSeo
         title="About | Direct Servicing Initiative"
-        description="DSI is a California-licensed loan servicer built in West Covina by Frank Williams (DRE# 01979442 / NMLS# 1858674). Institutional-grade servicing for private money lenders, hard money funds, and trust deed investors."
+        description="DSI is a California-licensed loan servicer built in West Covina by Frank Williams. Institutional-grade servicing for private money lenders, hard money funds, and trust deed investors, with Juan N. Williams (DRE# 01115216) as Broker of Record."
         path="/about"
         crumbs={[
           { name: "Home", href: "/" },
@@ -96,10 +96,11 @@ export default function AboutPage() {
               </h1>
               <p className="text-pearl/60 text-lg lg:text-xl leading-relaxed max-w-2xl">
                 Direct Servicing Initiative is a California-licensed loan
-                servicer built in West Covina. Founded by Frank Williams
-                (DRE# 01979442 / NMLS# 1858674) to bring institutional-grade
-                trust accounting, compliance, and reporting to the private
-                lending industry.
+                servicer built in West Covina. Founded by Frank Williams to
+                bring institutional-grade trust accounting, compliance, and
+                reporting to the private lending industry. Juan N. Williams
+                (DRE# 01115216) serves as Broker of Record on the California
+                brokerage.
               </p>
             </FadeIn>
           </div>

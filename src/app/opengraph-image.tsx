@@ -143,7 +143,7 @@ export default function OGImage() {
             trustdsi.com
           </div>
           <div style={{ color: "rgba(234,244,241,0.4)", fontSize: 14 }}>
-            DRE# 01979442 | NMLS# 1858674
+            CA Brokerage · Broker of Record DRE# 01115216
           </div>
         </div>
       </div>

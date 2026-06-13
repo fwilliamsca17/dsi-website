@@ -54,7 +54,7 @@ const reasons = [
     title: "California-Native Compliance, Not a Customization",
     pain: "National servicers learn California Civil Code §2924, the Homeowner Bill of Rights, and SB91 expensively — usually on your file.",
     proof:
-      "DSI is built in West Covina by a California-licensed broker (DRE# 01979442) and licensed mortgage originator (NMLS# 1858674). RESPA, TILA, and California-specific compliance are the baseline of every workflow.",
+      "DSI operates under a California-licensed brokerage with Juan N. Williams (DRE# 01115216) as Broker of Record — a 20-year California licensee. RESPA, TILA, and California-specific compliance are the baseline of every workflow.",
   },
   {
     icon: ShieldCheck,
@@ -70,7 +70,7 @@ const promiseList = [
   "Demands and payoff statements turned in 48 hours or less",
   "1098s and 1099-INTs locked December 28, delivered by January 31",
   "Monthly statements GAAP-aligned for audit acceptance",
-  "California-licensed brokerage on file — DRE# 01979442 / NMLS# 1858674",
+  "California-licensed brokerage on file — Broker of Record DRE# 01115216 (Juan N. Williams)",
   "Trust accounts segregated and reconciled monthly",
 ];
 

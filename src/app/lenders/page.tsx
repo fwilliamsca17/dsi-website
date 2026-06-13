@@ -250,12 +250,12 @@ export default function LendersPage() {
                     ))}
                   </div>
                   <p className="text-xs text-body/60 text-center leading-relaxed border-t border-surface-300 pt-5">
-                    DSI is operated under{" "}
+                    DSI is operated as a{" "}
                     <span className="font-semibold text-slate-700">
-                      DRE# 01979442 / NMLS# 1858674
+                      California-licensed brokerage
                     </span>{" "}
-                    in West Covina, California — a licensed brokerage, not a
-                    third-party tech vendor.
+                    in West Covina with Juan N. Williams (DRE# 01115216) as
+                    Broker of Record — not a third-party tech vendor.
                   </p>
                 </div>
               </FadeIn>

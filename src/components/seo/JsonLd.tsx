@@ -243,37 +243,10 @@ export function FrankWilliamsJsonLd() {
     familyName: "Williams",
     jobTitle: "Principal & Founder",
     worksFor: { "@id": "https://trustdsi.com/#organization" },
-    hasCredential: [
-      {
-        "@type": "EducationalOccupationalCredential",
-        credentialCategory: "license",
-        name: "California Real Estate Broker",
-        identifier: "DRE# 01979442",
-        recognizedBy: {
-          "@type": "GovernmentOrganization",
-          name: "California Department of Real Estate",
-        },
-      },
-      {
-        "@type": "EducationalOccupationalCredential",
-        credentialCategory: "license",
-        name: "Mortgage Loan Originator",
-        identifier: "NMLS# 1858674",
-        recognizedBy: {
-          "@type": "Organization",
-          name: "Nationwide Multistate Licensing System",
-        },
-      },
-      {
-        "@type": "EducationalOccupationalCredential",
-        credentialCategory: "certification",
-        name: "Certified Commercial Investment Member (CCIM)",
-        recognizedBy: {
-          "@type": "Organization",
-          name: "CCIM Institute",
-        },
-      },
-    ],
+    // Frank is the operating principal and founder. The California broker
+    // license is held by Juan N. Williams as Broker of Record (see
+    // JuanWilliamsJsonLd #juan-williams). Personal credentials are not
+    // attributed here.
     knowsAbout: [
       "Private money loan servicing",
       "Commercial real estate",

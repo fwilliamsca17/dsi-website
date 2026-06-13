@@ -4,7 +4,7 @@ import { COMPANY } from "@/lib/constants";
 import { PageSeo } from "@/components/seo/JsonLd";
 
 const DESCRIPTION =
-  "Direct Servicing Initiative privacy policy — how we collect, use, and protect your personal information, including SMS opt-in data. DRE# 01979442 | NMLS# 1858674.";
+  "Direct Servicing Initiative privacy policy — how we collect, use, and protect your personal information, including SMS opt-in data.";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -93,7 +93,7 @@ export default function PrivacyPage() {
                   </a>
                 </p>
                 <p className="mt-2 text-body/70">
-                  {COMPANY.principal} | Broker DRE# {COMPANY.dreLicense} | NMLS# {COMPANY.nmls}
+                  Principal: {COMPANY.principal} · Broker of Record: {COMPANY.brokerOfRecord} (DRE# {COMPANY.brokerOfRecordDre})
                 </p>
               </div>
             </div>

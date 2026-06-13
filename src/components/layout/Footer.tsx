@@ -98,7 +98,7 @@ export function Footer() {
               &copy; {new Date().getFullYear()} {COMPANY.legalName} · All rights reserved.
               {" "}
               <span className="text-pearl/30">
-                Broker of Record: {COMPANY.brokerOfRecord} (DRE# {COMPANY.brokerOfRecordDre}) · Principal: {COMPANY.principal} (DRE# {COMPANY.dreLicense}, NMLS# {COMPANY.nmls})
+                Broker of Record: {COMPANY.brokerOfRecord} (DRE# {COMPANY.brokerOfRecordDre}) · Principal: {COMPANY.principal}
               </span>
             </p>
 

@@ -87,7 +87,7 @@ export const GLOSSARY: GlossaryTerm[] = [
     abbr: "Nationwide Multistate Licensing System",
     category: "Regulatory",
     definition:
-      "The system of record for mortgage loan originator licensing across all U.S. states and territories. NMLS numbers (such as DSI principal Frank Williams's NMLS# 1858674) are publicly searchable at nmlsconsumeraccess.org.",
+      "The system of record for mortgage loan originator licensing across all U.S. states and territories. NMLS numbers are publicly searchable at nmlsconsumeraccess.org.",
     slug: "nmls",
   },
   {
@@ -95,7 +95,7 @@ export const GLOSSARY: GlossaryTerm[] = [
     abbr: "California Department of Real Estate",
     category: "Regulatory",
     definition:
-      "California state agency issuing and regulating real estate broker and salesperson licenses. DRE license numbers (such as DSI principal Frank Williams's DRE# 01979442) are publicly searchable on the DRE website.",
+      "California state agency issuing and regulating real estate broker and salesperson licenses. DSI's Broker of Record is Juan N. Williams (DRE# 01115216). DRE license numbers are publicly searchable on the DRE website.",
     slug: "dre",
   },
 
