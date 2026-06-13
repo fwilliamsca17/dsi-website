@@ -7,6 +7,7 @@ import {
   LocalBusinessJsonLd,
   WebSiteJsonLd,
   FrankWilliamsJsonLd,
+  JuanWilliamsJsonLd,
 } from "@/components/seo/JsonLd";
 import "./globals.css";
 
@@ -115,6 +116,7 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         <OrganizationJsonLd />
         <FrankWilliamsJsonLd />
+        <JuanWilliamsJsonLd />
         <LocalBusinessJsonLd />
         <WebSiteJsonLd />
         <Header />

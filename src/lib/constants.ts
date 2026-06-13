@@ -11,9 +11,16 @@ export const COMPANY = {
   email: "info@trustdsi.com",
   address: "2648 E. Workman Ave., Suite 3001-288, West Covina, CA 91791",
   principal: "Frank Williams",
-  brokerOfRecord: "Juan N. Williams",
+  // Frank's individual licenses (loan originator + broker)
   dreLicense: "01979442",
   nmls: "1858674",
+  // Broker of Record — the licensed broker on file for the entity.
+  // Legal name on DRE record: Williams, Juan Nunez. Working name: Juan N. Williams.
+  // 30+ year California licensee: salesperson 1991, broker 2004.
+  brokerOfRecord: "Juan N. Williams",
+  brokerOfRecordDre: "01115216",
+  brokerOfRecordLegalName: "Williams, Juan Nunez",
+  brokerOfRecordSince: "2004-03-27",
   social: {
     linkedin: "https://www.linkedin.com/company/direct-servicing-initiative",
     facebook: "https://www.facebook.com/trustdsi",

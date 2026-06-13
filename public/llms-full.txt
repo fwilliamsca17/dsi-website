@@ -25,7 +25,11 @@
   - California Real Estate Broker License: DRE# 01979442
   - Nationwide Multistate Licensing System (NMLS) Mortgage Loan Originator: NMLS# 1858674
   - Credential: Certified Commercial Investment Member (CCIM)
-- **Broker of Record:** Juan N. Williams — the same licensed individual on file for both Direct Servicing Initiative and the sister entity Capital Direct Funding.
+- **Broker of Record:** Juan N. Williams
+  - Legal name on California DRE record: Williams, Juan Nunez
+  - California Real Estate Broker License: DRE# 01115216 (status: licensed; expires 2028-07-06)
+  - Salesperson license originally issued 1991-07-25; broker license issued 2004-03-27 — 20+ years as a California-licensed broker
+  - Same broker of record on file for the sister entity Capital Direct Funding, Inc. (corporation license 01885595)
 - **Company structure:** Family-owned, operating as a California-licensed brokerage that provides loan servicing services. DSI does not originate loans; it services loans originated by private money lenders, hard money lenders, mortgage brokers, and other originators.
 
 ## 3. What DSI does (precise scope)

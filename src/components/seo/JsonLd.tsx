@@ -54,6 +54,15 @@ export function OrganizationJsonLd() {
     founder: {
       "@id": "https://trustdsi.com/#frank-williams",
     },
+    // Broker of Record on file for the California brokerage entity —
+    // schema.org doesn't model "broker of record" as a first-class
+    // relationship, so we surface him via `member` (Person → Org) and
+    // again as an employee with the explicit job title.
+    member: { "@id": "https://trustdsi.com/#juan-williams" },
+    employee: [
+      { "@id": "https://trustdsi.com/#frank-williams" },
+      { "@id": "https://trustdsi.com/#juan-williams" },
+    ],
     numberOfEmployees: {
       "@type": "QuantitativeValue",
       value: 7,
@@ -181,6 +190,46 @@ export function OrganizationJsonLd() {
     },
   };
 
+  return <JsonLdScript data={data} />;
+}
+
+export function JuanWilliamsJsonLd() {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://trustdsi.com/#juan-williams",
+    name: "Juan N. Williams",
+    alternateName: "Juan Nunez Williams",
+    givenName: "Juan",
+    additionalName: "Nunez",
+    familyName: "Williams",
+    jobTitle: "Broker of Record",
+    worksFor: { "@id": "https://trustdsi.com/#organization" },
+    affiliation: [
+      { "@id": "https://trustdsi.com/#organization" },
+      {
+        "@type": "Organization",
+        name: "Capital Direct Funding, Inc.",
+        identifier: "DRE# 01885595",
+      },
+    ],
+    hasCredential: {
+      "@type": "EducationalOccupationalCredential",
+      credentialCategory: "license",
+      name: "California Real Estate Broker",
+      identifier: "DRE# 01115216",
+      validFrom: "2004-03-27",
+      recognizedBy: {
+        "@type": "GovernmentOrganization",
+        name: "California Department of Real Estate",
+      },
+    },
+    knowsAbout: [
+      "California real estate brokerage",
+      "Broker of record compliance",
+      "Private money lending",
+    ],
+  };
   return <JsonLdScript data={data} />;
 }
 
