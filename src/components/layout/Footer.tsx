@@ -94,12 +94,14 @@ export function Footer() {
 
           {/* Bottom bar */}
           <div className="mt-16 pt-8 border-t border-pearl/10 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-pearl/40 text-xs text-center md:text-left">
+            <p className="text-pearl/40 text-xs text-center md:text-left max-w-2xl">
               &copy; {new Date().getFullYear()} {COMPANY.legalName} · All rights reserved.
               {" "}
               <span className="text-pearl/30">
                 Broker of Record: {COMPANY.brokerOfRecord} (DRE# {COMPANY.brokerOfRecordDre}) · Principal: {COMPANY.principal}
               </span>
+              {" · "}
+              Loan servicing only — separate from Williams Capital Advisors (brokerage) and Global Innovation Group (AI/digital).
             </p>
 
             <div className="flex items-center gap-4">
