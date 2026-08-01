@@ -41,6 +41,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
+    host: "https://trustdsi.com",
     sitemap: "https://trustdsi.com/sitemap.xml",
   };
 }
