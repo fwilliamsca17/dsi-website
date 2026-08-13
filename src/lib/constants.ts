@@ -141,6 +141,11 @@ export const TEAM: TeamMember[] = [
     image: "/images/team/frank-williams.png",
   },
   {
+    name: "Karla Banuelos",
+    title: "Account Manager",
+    image: "/images/team/karla-banuelos.png",
+  },
+  {
     name: "Erendira Cabrera",
     title: "Operations Support Specialist",
     image: "/images/team/erendira-cabrera.png",
@@ -159,6 +164,11 @@ export const TEAM: TeamMember[] = [
     name: "Kristle Alcuizar",
     title: "Administrative Research Specialist",
     image: "/images/team/kristle-alcuizar.png",
+  },
+  {
+    name: "Ivy Verdad",
+    title: "Financial Operations Manager",
+    image: "/images/team/ivy-verdad.png",
   },
   {
     // Broker of Record — the same licensed individual on file for both
