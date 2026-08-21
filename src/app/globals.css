@@ -35,15 +35,17 @@
     @apply max-w-7xl mx-auto;
   }
 
+  /* jade-700, not jade-600: white-on-jade-600 and jade-600-on-white both
+     measure ~3.8:1 — under the 4.5:1 WCAG AA floor for this text size. */
   .eyebrow {
-    @apply text-label font-sans uppercase tracking-widest text-jade-600 font-semibold;
+    @apply text-label font-sans uppercase tracking-widest text-jade-700 font-semibold;
   }
 
   /* ────────── Buttons ────────── */
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 bg-jade-600 text-white px-7 py-3.5 rounded-lg
-           font-medium text-sm hover:bg-jade-700 transition-all duration-200
-           shadow-lg shadow-jade-600/20 hover:shadow-jade-600/30;
+    @apply inline-flex items-center justify-center gap-2 bg-jade-700 text-white px-7 py-3.5 rounded-lg
+           font-medium text-sm hover:bg-jade-800 transition-all duration-200
+           shadow-lg shadow-jade-700/20 hover:shadow-jade-700/30;
   }
 
   .btn-secondary {
@@ -57,8 +59,8 @@
   }
 
   .btn-ghost {
-    @apply inline-flex items-center gap-2 text-jade-600 font-medium text-sm
-           hover:text-jade-700 transition-colors;
+    @apply inline-flex items-center gap-2 text-jade-700 font-medium text-sm
+           hover:text-jade-800 transition-colors;
   }
 
   /* Premium jade CTA — sister of CDF's btn-champagne. Used on dark hero atmospheres. */

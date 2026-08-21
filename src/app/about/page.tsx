@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "Direct Servicing Initiative is a California-licensed loan servicer built in West Covina by Frank Williams. Institutional-grade servicing for the private lending industry, with Juan N. Williams (DRE# 01115216) as Broker of Record.",
+  alternates: { canonical: "https://trustdsi.com/about" },
 };
 
 const values = [
@@ -88,13 +89,15 @@ export default function AboutPage() {
       <section className="hero-atmosphere relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="section-padding">
           <div className="max-container max-w-4xl">
-            <FadeIn>
-              <p className="eyebrow !text-jade-300 mb-4">About DSI</p>
-              <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-display-xl text-pearl mb-6 text-balance">
+            {/* CSS entrance, not FadeIn: the h1 is this page's LCP element and
+                must never ship as opacity:0 in the SSR HTML. */}
+            <div>
+              <p className="hero-in eyebrow !text-jade-300 mb-4">About DSI</p>
+              <h1 className="hero-in-lcp font-heading font-bold text-4xl sm:text-5xl lg:text-display-xl text-pearl mb-6 text-balance">
                 Family-run.{" "}
                 <span className="text-jade-gradient">Institutionally disciplined.</span>
               </h1>
-              <p className="text-pearl/60 text-lg lg:text-xl leading-relaxed max-w-2xl">
+              <p className="hero-in text-pearl/60 text-lg lg:text-xl leading-relaxed max-w-2xl">
                 Direct Servicing Initiative is a California-licensed loan
                 servicer built in West Covina. Founded by Frank Williams to
                 bring institutional-grade trust accounting, compliance, and
@@ -102,7 +105,7 @@ export default function AboutPage() {
                 (DRE# 01115216) serves as Broker of Record on the California
                 brokerage.
               </p>
-            </FadeIn>
+            </div>
           </div>
         </div>
       </section>

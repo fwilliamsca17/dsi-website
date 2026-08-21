@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import {
   Send,
   CheckCircle,
@@ -9,30 +8,13 @@ import {
   MapPin,
   Clock,
 } from "lucide-react";
-import { COMPANY, WEB3FORMS_KEY } from "@/lib/constants";
+import { COMPANY } from "@/lib/constants";
+import { useLeadForm } from "@/lib/useLeadForm";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { PageSeo } from "@/components/seo/JsonLd";
 
 export default function ContactPage() {
-  const [submitted, setSubmitted] = useState(false);
-
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const form = e.currentTarget;
-    const data = new FormData(form);
-    data.append("access_key", WEB3FORMS_KEY);
-
-    const res = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: data,
-    });
-
-    if (res.ok) {
-      setSubmitted(true);
-      form.reset();
-      setTimeout(() => setSubmitted(false), 5000);
-    }
-  }
+  const { submitted, submitting, error, handleSubmit } = useLeadForm();
 
   return (
     <>
@@ -49,16 +31,18 @@ export default function ContactPage() {
       <section className="hero-atmosphere relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="section-padding">
           <div className="max-container max-w-4xl">
-            <FadeIn>
-              <p className="eyebrow !text-jade-300 mb-4">Contact Us</p>
-              <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-display-xl text-pearl mb-6 text-balance">
+            {/* CSS entrance, not FadeIn: the h1 is this page's LCP element and
+                must never ship as opacity:0 in the SSR HTML. */}
+            <div>
+              <p className="hero-in eyebrow !text-jade-300 mb-4">Contact Us</p>
+              <h1 className="hero-in-lcp font-heading font-bold text-4xl sm:text-5xl lg:text-display-xl text-pearl mb-6 text-balance">
                 Let&apos;s Start a Conversation
               </h1>
-              <p className="text-pearl/60 text-lg lg:text-xl leading-relaxed max-w-2xl">
+              <p className="hero-in text-pearl/60 text-lg lg:text-xl leading-relaxed max-w-2xl">
                 Whether you&apos;re exploring servicing options, requesting a demo,
                 or have questions about our capabilities, we&apos;re here to help.
               </p>
-            </FadeIn>
+            </div>
           </div>
         </div>
       </section>
@@ -245,10 +229,36 @@ export default function ContactPage() {
 
                         <button
                           type="submit"
-                          className="btn-primary w-full justify-center text-base py-4"
+                          disabled={submitting}
+                          className="btn-primary w-full justify-center text-base py-4 disabled:opacity-60 disabled:cursor-wait"
                         >
-                          <Send className="w-4 h-4" /> Send Message
+                          <Send className="w-4 h-4" />{" "}
+                          {submitting ? "Sending…" : "Send Message"}
                         </button>
+
+                        {error && (
+                          <p
+                            className="text-center text-sm text-red-600"
+                            role="alert"
+                          >
+                            Something went wrong sending your message. Please
+                            call{" "}
+                            <a
+                              href={`tel:${COMPANY.phone}`}
+                              className="font-semibold text-jade-700 underline"
+                            >
+                              {COMPANY.phone}
+                            </a>{" "}
+                            or email{" "}
+                            <a
+                              href={`mailto:${COMPANY.email}`}
+                              className="font-semibold text-jade-700 underline"
+                            >
+                              {COMPANY.email}
+                            </a>
+                            .
+                          </p>
+                        )}
                       </form>
                     )}
                   </div>

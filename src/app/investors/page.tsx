@@ -22,6 +22,7 @@ export const metadata: Metadata = {
   title: "For Investors",
   description:
     "Self-directed IRA-compliant servicing, fractionalized note distributions, K-1 supporting schedules, GAAP-aligned statements, and audit support. DSI delivers the reporting institutional investors expect — to private-money investors.",
+  alternates: { canonical: "https://trustdsi.com/investors" },
 };
 
 // Real investor pain — not "show me a dashboard." The actual workflow
@@ -113,19 +114,21 @@ export default function InvestorsPage() {
       <section className="hero-atmosphere relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="section-padding">
           <div className="max-container max-w-4xl">
-            <FadeIn>
-              <p className="eyebrow !text-jade-300 mb-4">For Investors</p>
-              <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-display-xl text-pearl mb-6 text-balance">
+            {/* CSS entrance, not FadeIn: the h1 is this page's LCP element and
+                must never ship as opacity:0 in the SSR HTML. */}
+            <div>
+              <p className="hero-in eyebrow !text-jade-300 mb-4">For Investors</p>
+              <h1 className="hero-in-lcp font-heading font-bold text-4xl sm:text-5xl lg:text-display-xl text-pearl mb-6 text-balance">
                 Institutional-grade reporting.{" "}
                 <span className="text-jade-gradient">On private notes.</span>
               </h1>
-              <p className="text-pearl/60 text-lg lg:text-xl leading-relaxed max-w-2xl">
+              <p className="hero-in text-pearl/60 text-lg lg:text-xl leading-relaxed max-w-2xl">
                 Self-directed IRAs, fractionalized notes, fund SMAs, and family
                 offices — DSI runs the servicing math, the tax docs, and the
                 audit support that sophisticated investors expect from a private
                 note position.
               </p>
-            </FadeIn>
+            </div>
           </div>
         </div>
       </section>

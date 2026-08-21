@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   title: "Why DSI",
   description:
     "Six operational commitments that distinguish DSI from generic loan servicers: named account managers, 48-hour demand turnaround, January 31 tax docs, GAAP-aligned statements, California-native compliance, and segregated trust accounting.",
+  alternates: { canonical: "https://trustdsi.com/why-dsi" },
 };
 
 const reasons = [
@@ -90,18 +91,20 @@ export default function WhyDSIPage() {
       <section className="hero-atmosphere relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="section-padding">
           <div className="max-container max-w-4xl">
-            <FadeIn>
-              <p className="eyebrow !text-jade-300 mb-4">Why DSI</p>
-              <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-display-xl text-pearl mb-6 text-balance">
+            {/* CSS entrance, not FadeIn: the h1 is this page's LCP element and
+                must never ship as opacity:0 in the SSR HTML. */}
+            <div>
+              <p className="hero-in eyebrow !text-jade-300 mb-4">Why DSI</p>
+              <h1 className="hero-in-lcp font-heading font-bold text-4xl sm:text-5xl lg:text-display-xl text-pearl mb-6 text-balance">
                 The Standards.{" "}
                 <span className="text-jade-gradient">The Proof.</span>
               </h1>
-              <p className="text-pearl/60 text-lg lg:text-xl leading-relaxed max-w-2xl">
+              <p className="hero-in text-pearl/60 text-lg lg:text-xl leading-relaxed max-w-2xl">
                 Most servicers sell on adjectives — compliant, transparent,
                 trusted. DSI commits to operational standards a client can hold
                 us to. Six of them, with the evidence behind each.
               </p>
-            </FadeIn>
+            </div>
           </div>
         </div>
       </section>

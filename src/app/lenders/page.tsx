@@ -21,6 +21,7 @@ export const metadata: Metadata = {
   title: "For Lenders",
   description:
     "Trust-accounted, white-labeled, RESPA/TILA-compliant loan servicing for California private money lenders, hard money funds, and mortgage brokers. 48-hour boarding, broker fee disbursements, and named account managers.",
+  alternates: { canonical: "https://trustdsi.com/lenders" },
 };
 
 // Pain-driven lender problems DSI solves, not generic "outsourcing" benefits.
@@ -108,19 +109,21 @@ export default function LendersPage() {
       <section className="hero-atmosphere relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="section-padding">
           <div className="max-container max-w-4xl">
-            <FadeIn>
-              <p className="eyebrow !text-jade-300 mb-4">For Lenders</p>
-              <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-display-xl text-pearl mb-6 text-balance">
+            {/* CSS entrance, not FadeIn: the h1 is this page's LCP element and
+                must never ship as opacity:0 in the SSR HTML. */}
+            <div>
+              <p className="hero-in eyebrow !text-jade-300 mb-4">For Lenders</p>
+              <h1 className="hero-in-lcp font-heading font-bold text-4xl sm:text-5xl lg:text-display-xl text-pearl mb-6 text-balance">
                 You originate.{" "}
                 <span className="text-jade-gradient">We service of record.</span>
               </h1>
-              <p className="text-pearl/60 text-lg lg:text-xl leading-relaxed max-w-2xl">
+              <p className="hero-in text-pearl/60 text-lg lg:text-xl leading-relaxed max-w-2xl">
                 Private money lenders, hard money funds, and broker-dealer
                 originators hand DSI the post-close lifecycle — trust accounting,
                 investor distributions, RESPA/TILA-grade compliance, demand
                 turnaround, and workouts when loans go sideways.
               </p>
-            </FadeIn>
+            </div>
           </div>
         </div>
       </section>

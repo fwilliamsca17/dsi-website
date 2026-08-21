@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Our Team",
   description:
     "Meet the team behind Direct Servicing Initiative. Founded by Frank Williams with Juan N. Williams as Broker of Record. Family-owned operations team handling every file from boarding through payoff.",
+  alternates: { canonical: "https://trustdsi.com/team" },
 };
 
 export default function TeamPage() {
@@ -30,16 +31,18 @@ export default function TeamPage() {
       <section className="hero-atmosphere relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="section-padding">
           <div className="max-container max-w-4xl">
-            <FadeIn>
-              <p className="eyebrow !text-jade-300 mb-4">Our Team</p>
-              <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-display-xl text-pearl mb-6 text-balance">
+            {/* CSS entrance, not FadeIn: the h1 is this page's LCP element and
+                must never ship as opacity:0 in the SSR HTML. */}
+            <div>
+              <p className="hero-in eyebrow !text-jade-300 mb-4">Our Team</p>
+              <h1 className="hero-in-lcp font-heading font-bold text-4xl sm:text-5xl lg:text-display-xl text-pearl mb-6 text-balance">
                 The People Behind the Platform
               </h1>
-              <p className="text-pearl/60 text-lg lg:text-xl leading-relaxed max-w-2xl">
+              <p className="hero-in text-pearl/60 text-lg lg:text-xl leading-relaxed max-w-2xl">
                 A team of finance and operations professionals dedicated to
                 delivering institutional-grade servicing with a personal touch.
               </p>
-            </FadeIn>
+            </div>
           </div>
         </div>
       </section>

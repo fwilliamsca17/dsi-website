@@ -94,10 +94,12 @@ export function Footer() {
 
           {/* Bottom bar */}
           <div className="mt-16 pt-8 border-t border-pearl/10 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-pearl/40 text-xs text-center md:text-left max-w-2xl">
+            {/* pearl/70 (≈8.8:1 on ink-950) — the license disclosure is the one
+                line that must stay legible; /40 and /30 fail WCAG AA at 12px. */}
+            <p className="text-pearl/70 text-xs text-center md:text-left max-w-2xl">
               &copy; {new Date().getFullYear()} {COMPANY.legalName} · All rights reserved.
               {" "}
-              <span className="text-pearl/30">
+              <span>
                 Broker of Record: {COMPANY.brokerOfRecord} (DRE# {COMPANY.brokerOfRecordDre}) · Principal: {COMPANY.principal}
               </span>
               {" · "}

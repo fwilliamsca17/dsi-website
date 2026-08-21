@@ -53,14 +53,14 @@ export const metadata: Metadata = {
     "non-performing loans",
     "Direct Servicing Initiative",
   ],
+  // No url/title/description here: children inherit the whole openGraph
+  // object as-is (shallow merge), so page-level values would be shadowed by
+  // homepage values. Leaving them unset lets Next fall back to each page's
+  // resolved title/description, and canonical is declared per page.
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://trustdsi.com",
     siteName: "Direct Servicing Initiative",
-    title: "Direct Servicing Initiative | Private Loan Servicing Experts",
-    description:
-      "Southern California's trusted private loan servicer. End-to-end servicing from loan setup to distressed asset resolution. Investor dashboards, ACH processing, and full compliance.",
     images: [
       {
         url: "/opengraph-image",
@@ -72,9 +72,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Direct Servicing Initiative | Private Loan Servicing",
-    description:
-      "Compliant, transparent loan servicing for private lenders and investors in Southern California.",
     images: ["/opengraph-image"],
   },
   robots: {
@@ -89,9 +86,10 @@ export const metadata: Metadata = {
     },
   },
   category: "Finance",
-  alternates: {
-    canonical: "https://trustdsi.com",
-  },
+  // Canonical is intentionally NOT set here. Metadata merges shallowly, so a
+  // root canonical is inherited verbatim by every page that doesn't override
+  // it — which pointed six pages at the homepage. Every page (including the
+  // homepage via page.tsx) declares its own alternates.canonical.
   other: {
     "geo.region": "US-CA",
     "geo.placename": "West Covina",

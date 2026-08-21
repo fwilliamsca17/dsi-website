@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   title: "Services",
   description:
     "Loan servicing, processing & documentation, and non-performing & distressed loan services for the private lending industry.",
+  alternates: { canonical: "https://trustdsi.com/services" },
 };
 
 const iconMap: Record<string, React.ElementType> = {
@@ -44,17 +45,19 @@ export default function ServicesPage() {
       <section className="hero-atmosphere relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28">
         <div className="section-padding">
           <div className="max-container max-w-4xl">
-            <FadeIn>
-              <p className="eyebrow !text-jade-300 mb-4">Our Services</p>
-              <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-display-xl text-pearl mb-6 text-balance">
+            {/* CSS entrance, not FadeIn: the h1 is this page's LCP element and
+                must never ship as opacity:0 in the SSR HTML. */}
+            <div>
+              <p className="hero-in eyebrow !text-jade-300 mb-4">Our Services</p>
+              <h1 className="hero-in-lcp font-heading font-bold text-4xl sm:text-5xl lg:text-display-xl text-pearl mb-6 text-balance">
                 End-to-End Loan Servicing Solutions
               </h1>
-              <p className="text-pearl/60 text-lg lg:text-xl leading-relaxed max-w-2xl">
+              <p className="hero-in text-pearl/60 text-lg lg:text-xl leading-relaxed max-w-2xl">
                 From the moment a loan closes to its final payoff, DSI manages
                 every step of the servicing lifecycle with compliance, precision,
                 and complete transparency.
               </p>
-            </FadeIn>
+            </div>
           </div>
         </div>
       </section>
