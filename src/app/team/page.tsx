@@ -131,7 +131,7 @@ export default function TeamPage() {
                 We&apos;re always looking for talented people who share our
                 commitment to excellence and transparency.
               </p>
-              <Link href="/contact" className="btn-primary">
+              <Link href="/contact" className="btn-jade">
                 Get in Touch <ArrowRight className="w-4 h-4" />
               </Link>
             </FadeIn>

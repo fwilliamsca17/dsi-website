@@ -211,7 +211,7 @@ export default function WhyDSIPage() {
                 Talk to DSI about what your portfolio needs — and what we&apos;ll
                 commit to in writing.
               </p>
-              <Link href="/contact" className="btn-primary">
+              <Link href="/contact" className="btn-jade">
                 Start the Conversation <ArrowRight className="w-4 h-4" />
               </Link>
             </FadeIn>

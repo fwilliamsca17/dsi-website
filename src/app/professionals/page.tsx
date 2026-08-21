@@ -194,7 +194,7 @@ export default function ProfessionalsPage() {
               acknowledgment.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <a href={`tel:${COMPANY.phone}`} className="btn-primary inline-flex">
+              <a href={`tel:${COMPANY.phone}`} className="btn-jade inline-flex">
                 Call {COMPANY.phone}
               </a>
               <Link

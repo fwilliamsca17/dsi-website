@@ -265,7 +265,7 @@ export default function InvestorsPage() {
                 Request a sample monthly statement and K-1 supporting schedule.
                 Five-minute review. Tells you everything you need.
               </p>
-              <Link href="/contact" className="btn-primary">
+              <Link href="/contact" className="btn-jade">
                 Request Sample Reports <ArrowRight className="w-4 h-4" />
               </Link>
             </FadeIn>

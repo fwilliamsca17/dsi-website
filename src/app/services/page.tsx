@@ -141,7 +141,7 @@ export default function ServicesPage() {
                 Every portfolio is unique. Let&apos;s design a servicing program
                 tailored to your specific requirements.
               </p>
-              <Link href="/contact" className="btn-primary">
+              <Link href="/contact" className="btn-jade">
                 Schedule a Consultation <ArrowRight className="w-4 h-4" />
               </Link>
             </FadeIn>

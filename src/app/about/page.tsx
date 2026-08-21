@@ -245,7 +245,7 @@ export default function AboutPage() {
                 sales — we map your portfolio and the gaps your current
                 servicer is leaving.
               </p>
-              <Link href="/contact" className="btn-primary">
+              <Link href="/contact" className="btn-jade">
                 Start the Conversation <ArrowRight className="w-4 h-4" />
               </Link>
             </FadeIn>

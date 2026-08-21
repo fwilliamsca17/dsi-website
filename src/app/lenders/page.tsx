@@ -282,7 +282,7 @@ export default function LendersPage() {
                 identify the compliance gaps, and quote a servicing program in
                 writing.
               </p>
-              <Link href="/contact" className="btn-primary">
+              <Link href="/contact" className="btn-jade">
                 Schedule a Discovery Call <ArrowRight className="w-4 h-4" />
               </Link>
             </FadeIn>
