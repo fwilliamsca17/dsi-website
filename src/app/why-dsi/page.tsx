@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -14,12 +14,12 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { PageSeo } from "@/components/seo/JsonLd";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Why DSI",
   description:
     "Six operational commitments that distinguish DSI from generic loan servicers: named account managers, 48-hour demand turnaround, January 31 tax docs, GAAP-aligned statements, California-native compliance, and segregated trust accounting.",
-  alternates: { canonical: "https://trustdsi.com/why-dsi" },
-};
+  path: "/why-dsi",
+});
 
 const reasons = [
   {

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -17,12 +17,12 @@ import { FAQ } from "@/components/sections/FAQ";
 import { FAQJsonLd, PageSeo } from "@/components/seo/JsonLd";
 import { LENDER_FAQS } from "@/lib/faqs";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "For Lenders",
   description:
     "Trust-accounted, white-labeled, RESPA/TILA-compliant loan servicing for California private money lenders, hard money funds, and mortgage brokers. 48-hour boarding, broker fee disbursements, and named account managers.",
-  alternates: { canonical: "https://trustdsi.com/lenders" },
-};
+  path: "/lenders",
+});
 
 // Pain-driven lender problems DSI solves, not generic "outsourcing" benefits.
 const lenderProblems = [

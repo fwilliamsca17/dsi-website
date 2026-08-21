@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { Hero } from "@/components/sections/Hero";
 import { StatsBar } from "@/components/sections/StatsBar";
 import { QuickFacts } from "@/components/sections/QuickFacts";
@@ -19,10 +19,8 @@ import { GetInTouch } from "@/components/sections/GetInTouch";
 import { HOME_FAQS } from "@/lib/faqs";
 
 // Title/description come from the root layout defaults; the homepage only
-// needs to pin its own canonical since the root layout no longer sets one.
-export const metadata: Metadata = {
-  alternates: { canonical: "https://trustdsi.com" },
-};
+// pins its canonical + og:url since the root layout no longer sets them.
+export const metadata = pageMetadata({ path: "/" });
 
 export default function HomePage() {
   return (

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -13,12 +13,12 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { BreadcrumbJsonLd, PageSeo } from "@/components/seo/JsonLd";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "For Professionals — Servicing Partners DSI Works With Daily",
   description:
     "Loan originators, real estate and bankruptcy counsel, CPAs, fund administrators, title officers, and trustees: DSI is the servicer of record behind your transactions. Fast demands, attorney-grade docs, 1098s by 1/31.",
-  alternates: { canonical: "https://trustdsi.com/professionals" },
-};
+  path: "/professionals",
+});
 
 const ICONS = { Briefcase, Scale, Calculator, FileText } as const;
 

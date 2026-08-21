@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, User } from "lucide-react";
@@ -7,12 +7,12 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { TeamJsonLd, PageSeo } from "@/components/seo/JsonLd";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Our Team",
   description:
     "Meet the team behind Direct Servicing Initiative. Founded by Frank Williams with Juan N. Williams as Broker of Record. Family-owned operations team handling every file from boarding through payoff.",
-  alternates: { canonical: "https://trustdsi.com/team" },
-};
+  path: "/team",
+});
 
 export default function TeamPage() {
   return (

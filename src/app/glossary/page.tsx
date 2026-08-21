@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { ArrowRight, ArrowUp } from "lucide-react";
 import { GLOSSARY, GLOSSARY_CATEGORIES } from "@/lib/glossary";
@@ -6,10 +7,12 @@ import { FadeIn } from "@/components/ui/FadeIn";
 import { BreadcrumbJsonLd, DefinedTermSetJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Glossary of Loan Servicing Terms",
-  description:
-    "Definitions of 35+ private money loan servicing terms — RESPA, TILA, §2924, HBOR, NOD, NOS, SDIRA, GAAP, 1098, 1099-INT, K-1, beneficiary statement, demand statement, and more. Sourced from DSI's daily working vocabulary.",
-  alternates: { canonical: "https://trustdsi.com/glossary" },
+  ...pageMetadata({
+    title: "Glossary of Loan Servicing Terms",
+    description:
+      "Definitions of 35+ private money loan servicing terms — RESPA, TILA, §2924, HBOR, NOD, NOS, SDIRA, GAAP, 1098, 1099-INT, K-1, beneficiary statement, demand statement, and more. Sourced from DSI's daily working vocabulary.",
+    path: "/glossary",
+  }),
   keywords: [
     "loan servicing glossary",
     "private money loan terms",
@@ -77,7 +80,7 @@ export default function GlossaryPage() {
               <span className="text-jade-gradient">Private Loan Servicing</span>
             </h1>
             <p className="text-pearl/60 text-lg lg:text-xl leading-relaxed max-w-2xl">
-              Forty terms from DSI&apos;s daily working vocabulary — regulatory,
+              {GLOSSARY.length} terms from DSI&apos;s daily working vocabulary — regulatory,
               workout, operations, investor and tax, and loan-product. Written
               for practitioners and citation-friendly for the AI engines that
               get asked &ldquo;what is a beneficiary statement?&rdquo; at 11pm.

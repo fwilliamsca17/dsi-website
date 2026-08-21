@@ -1,16 +1,16 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { COMPANY } from "@/lib/constants";
+import { pageMetadata } from "@/lib/seo";
 import { PageSeo } from "@/components/seo/JsonLd";
 
 const DESCRIPTION =
   "Direct Servicing Initiative privacy policy — how we collect, use, and protect your personal information, including SMS opt-in data.";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Privacy Policy",
   description: DESCRIPTION,
-  alternates: { canonical: "https://trustdsi.com/privacy" },
-};
+  path: "/privacy",
+});
 
 /*
  * SMS opt-in / TCPA paragraph is load-bearing for outbound texting compliance.

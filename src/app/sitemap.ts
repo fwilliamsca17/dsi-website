@@ -1,37 +1,33 @@
 import { MetadataRoute } from "next";
-import { GLOSSARY } from "@/lib/glossary";
 
 // Sitemap drives both classic search engine crawl and AI engine
 // discovery. Priorities reflect lead-conversion value (hero pages high,
 // definitional reference lower); changeFrequency hints crawlers on how
-// often to refetch. Glossary terms get individual entries so each
-// definition is discoverable directly.
+// often to refetch.
+//
+// Deliberately absent:
+// - lastModified — stamping build time on every entry told crawlers every
+//   page changed on every deploy, which destroys the signal. Omitting the
+//   field is honest; re-add per-entry dates only if they track real
+//   content changes.
+// - /glossary#term fragment entries — fragments are not separately
+//   indexable documents, and 40 of them diluted the file to 78% noise.
+//   Per-term discovery is handled by the DefinedTermSet JSON-LD on
+//   /glossary instead.
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://trustdsi.com";
-  const now = new Date();
 
-  const corePages: MetadataRoute.Sitemap = [
-    { url: baseUrl, lastModified: now, changeFrequency: "weekly", priority: 1.0 },
-    { url: `${baseUrl}/lenders`, lastModified: now, changeFrequency: "monthly", priority: 0.95 },
-    { url: `${baseUrl}/investors`, lastModified: now, changeFrequency: "monthly", priority: 0.95 },
-    { url: `${baseUrl}/services`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${baseUrl}/why-dsi`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
-    { url: `${baseUrl}/professionals`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
-    { url: `${baseUrl}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/team`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${baseUrl}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
-    { url: `${baseUrl}/glossary`, lastModified: now, changeFrequency: "monthly", priority: 0.75 },
-    { url: `${baseUrl}/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
+  return [
+    { url: baseUrl, changeFrequency: "weekly", priority: 1.0 },
+    { url: `${baseUrl}/lenders`, changeFrequency: "monthly", priority: 0.95 },
+    { url: `${baseUrl}/investors`, changeFrequency: "monthly", priority: 0.95 },
+    { url: `${baseUrl}/services`, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/why-dsi`, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${baseUrl}/professionals`, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${baseUrl}/contact`, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${baseUrl}/about`, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/glossary`, changeFrequency: "monthly", priority: 0.75 },
+    { url: `${baseUrl}/team`, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/privacy`, changeFrequency: "yearly", priority: 0.3 },
   ];
-
-  // Each glossary term as its own anchor — encourages AI engines and
-  // search to index individual definitions for entity-level recall.
-  const glossaryAnchors: MetadataRoute.Sitemap = GLOSSARY.map((t) => ({
-    url: `${baseUrl}/glossary#${t.slug}`,
-    lastModified: now,
-    changeFrequency: "yearly",
-    priority: 0.4,
-  }));
-
-  return [...corePages, ...glossaryAnchors];
 }

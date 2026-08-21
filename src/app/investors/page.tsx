@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -18,12 +18,12 @@ import { FAQ } from "@/components/sections/FAQ";
 import { FAQJsonLd, PageSeo } from "@/components/seo/JsonLd";
 import { INVESTOR_FAQS } from "@/lib/faqs";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "For Investors",
   description:
     "Self-directed IRA-compliant servicing, fractionalized note distributions, K-1 supporting schedules, GAAP-aligned statements, and audit support. DSI delivers the reporting institutional investors expect — to private-money investors.",
-  alternates: { canonical: "https://trustdsi.com/investors" },
-};
+  path: "/investors",
+});
 
 // Real investor pain — not "show me a dashboard." The actual workflow
 // issues that make existing servicers feel amateur to a family office,

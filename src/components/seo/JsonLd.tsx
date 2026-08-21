@@ -29,7 +29,16 @@ function JsonLdScript({ data }: { data: Record<string, unknown> }) {
 export function OrganizationJsonLd() {
   const data = {
     "@context": "https://schema.org",
-    "@type": ["Organization", "FinancialService", "ProfessionalService"],
+    // LocalBusiness is folded in here rather than emitted as a second
+    // entity — two @ids for the same business made knowledge graphs pick
+    // one at random. LocalBusiness-specific properties (geo, priceRange,
+    // openingHoursSpecification, paymentAccepted) live on this node.
+    "@type": [
+      "Organization",
+      "FinancialService",
+      "ProfessionalService",
+      "LocalBusiness",
+    ],
     "@id": "https://trustdsi.com/#organization",
     name: "Direct Servicing Initiative",
     alternateName: ["DSI", "Trust DSI", "Direct Servicing Initiative, Inc."],
@@ -65,7 +74,7 @@ export function OrganizationJsonLd() {
     ],
     numberOfEmployees: {
       "@type": "QuantitativeValue",
-      value: 7,
+      value: TEAM.length,
     },
     telephone: COMPANY.phone,
     email: COMPANY.email,
@@ -77,6 +86,20 @@ export function OrganizationJsonLd() {
       postalCode: "91791",
       addressCountry: "US",
     },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 34.0686,
+      longitude: -117.939,
+    },
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "09:00",
+      closes: "18:00",
+    },
+    priceRange: "$$",
+    paymentAccepted: ["ACH", "Bank Transfer", "Check"],
+    currenciesAccepted: "USD",
     // Multiple ContactPoint entries — each tagged with a purpose so AI engines
     // and knowledge panels can route the right inquiry to the right channel.
     contactPoint: [
@@ -256,67 +279,6 @@ export function FrankWilliamsJsonLd() {
       "TILA",
     ],
   };
-  return <JsonLdScript data={data} />;
-}
-
-export function LocalBusinessJsonLd() {
-  const data = {
-    "@context": "https://schema.org",
-    "@type": ["FinancialService", "LocalBusiness"],
-    "@id": "https://trustdsi.com/#localbusiness",
-    name: "Direct Servicing Initiative",
-    alternateName: "DSI",
-    url: "https://trustdsi.com",
-    image: "https://trustdsi.com/opengraph-image",
-    description:
-      "California-licensed private money loan servicer in West Covina. Trust accounting, RESPA/TILA compliance, 48-hour demand turnaround, GAAP-aligned investor reporting, and tax docs delivered before January 31.",
-    telephone: COMPANY.phone,
-    email: COMPANY.email,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "2648 E. Workman Ave., Suite 3001-288",
-      addressLocality: "West Covina",
-      addressRegion: "CA",
-      postalCode: "91791",
-      addressCountry: "US",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 34.0686,
-      longitude: -117.939,
-    },
-    openingHoursSpecification: {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "09:00",
-      closes: "18:00",
-    },
-    priceRange: "$$",
-    paymentAccepted: ["ACH", "Bank Transfer", "Check"],
-    currenciesAccepted: "USD",
-    areaServed: {
-      "@type": "GeoCircle",
-      geoMidpoint: {
-        "@type": "GeoCoordinates",
-        latitude: 34.0522,
-        longitude: -118.2437,
-      },
-      geoRadius: "150 mi",
-    },
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: "Loan Servicing Solutions",
-      itemListElement: SERVICES.map((service) => ({
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: service.title,
-          description: service.shortDescription,
-        },
-      })),
-    },
-  };
-
   return <JsonLdScript data={data} />;
 }
 

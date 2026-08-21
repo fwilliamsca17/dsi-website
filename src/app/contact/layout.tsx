@@ -1,13 +1,11 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Contact Us",
   description:
     "Contact Direct Servicing Initiative for private loan servicing in Southern California. Call (626) 796-1680 or visit us at 2648 E. Workman Ave., West Covina, CA 91791.",
-  alternates: {
-    canonical: "https://trustdsi.com/contact",
-  },
-};
+  path: "/contact",
+});
 
 export default function ContactLayout({
   children,

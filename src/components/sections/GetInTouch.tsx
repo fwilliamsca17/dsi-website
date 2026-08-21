@@ -67,6 +67,15 @@ export function GetInTouch() {
                     name="subject"
                     value="New DSI Website Inquiry"
                   />
+                  {/* Web3Forms honeypot — bots check it, humans never see it */}
+                  <input
+                    type="checkbox"
+                    name="botcheck"
+                    className="hidden"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                  />
                   {/* Labels are sr-only: the dark card design is placeholder-
                       driven, but screen readers still need programmatic names. */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">

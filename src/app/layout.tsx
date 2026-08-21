@@ -4,7 +4,6 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import {
   OrganizationJsonLd,
-  LocalBusinessJsonLd,
   WebSiteJsonLd,
   FrankWilliamsJsonLd,
   JuanWilliamsJsonLd,
@@ -115,7 +114,6 @@ export default function RootLayout({
         <OrganizationJsonLd />
         <FrankWilliamsJsonLd />
         <JuanWilliamsJsonLd />
-        <LocalBusinessJsonLd />
         <WebSiteJsonLd />
         <a href="#main" className="skip-link">
           Skip to content

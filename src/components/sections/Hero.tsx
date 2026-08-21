@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ChevronDown, Shield, BarChart3, Clock } from "lucide-react";
+import { STATS } from "@/lib/constants";
 
 // Rotating loan types DSI services — drives SEO depth and signals
 // the breadth of private-money product types we board.
@@ -102,22 +103,25 @@ export function Hero() {
               </Link>
             </div>
 
-            {/* Inline trust strip */}
+            {/* Inline trust strip — derived from STATS so the numbers can't
+                drift from StatsBar and llms.txt */}
             <div
               className="hero-in mt-14 flex flex-wrap items-center gap-x-7 gap-y-3 text-sm text-pearl/50"
               style={{ animationDelay: "460ms" }}
             >
-              <span>
-                <span className="font-semibold text-pearl">$150M+</span> serviced
-              </span>
-              <span className="h-4 w-px bg-pearl/15" />
-              <span>
-                <span className="font-semibold text-pearl">500+</span> active loans
-              </span>
-              <span className="h-4 w-px bg-pearl/15" />
-              <span>
-                <span className="font-semibold text-pearl">99.8%</span> payment accuracy
-              </span>
+              {STATS.slice(0, 3).map((stat, i) => (
+                <Fragment key={stat.label}>
+                  {i > 0 && <span className="h-4 w-px bg-pearl/15" />}
+                  <span>
+                    <span className="font-semibold text-pearl">
+                      {stat.prefix}
+                      {stat.value}
+                      {stat.suffix}
+                    </span>{" "}
+                    {stat.label.toLowerCase()}
+                  </span>
+                </Fragment>
+              ))}
             </div>
           </div>
 

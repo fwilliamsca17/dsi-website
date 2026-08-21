@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import {
   FileCheck,
@@ -13,12 +13,12 @@ import { FadeIn } from "@/components/ui/FadeIn";
 import { FAQ } from "@/components/sections/FAQ";
 import { ServiceJsonLd, FAQJsonLd, ServicingProcessJsonLd, PageSeo } from "@/components/seo/JsonLd";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Services",
   description:
     "Loan servicing, processing & documentation, and non-performing & distressed loan services for the private lending industry.",
-  alternates: { canonical: "https://trustdsi.com/services" },
-};
+  path: "/services",
+});
 
 const iconMap: Record<string, React.ElementType> = {
   FileCheck,

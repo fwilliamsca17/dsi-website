@@ -274,11 +274,4 @@ export const PROFESSIONALS = [
   },
 ];
 
-// Professional affiliations / trust badges. Images stored in /public/images/affiliations.
-export const AFFILIATIONS = [
-  { label: "CCIM", image: "/images/affiliations/ccim.png" },
-  { label: "NAHREP", image: "/images/affiliations/nahrep.png" },
-  { label: "City Club LA", image: "/images/affiliations/city-club.png" },
-];
-
 export const WEB3FORMS_KEY = "09f80e34-62a3-4fc0-9773-ff3f8f0683e2";

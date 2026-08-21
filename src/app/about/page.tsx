@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -12,12 +12,12 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { PageSeo } from "@/components/seo/JsonLd";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "About",
   description:
     "Direct Servicing Initiative is a California-licensed loan servicer built in West Covina by Frank Williams. Institutional-grade servicing for the private lending industry, with Juan N. Williams (DRE# 01115216) as Broker of Record.",
-  alternates: { canonical: "https://trustdsi.com/about" },
-};
+  path: "/about",
+});
 
 const values = [
   {

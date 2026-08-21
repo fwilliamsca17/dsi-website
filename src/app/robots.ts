@@ -16,6 +16,20 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: "ChatGPT-User",
         allow: "/",
       },
+      // Current Anthropic crawler tokens…
+      {
+        userAgent: "ClaudeBot",
+        allow: "/",
+      },
+      {
+        userAgent: "Claude-User",
+        allow: "/",
+      },
+      {
+        userAgent: "Claude-SearchBot",
+        allow: "/",
+      },
+      // …plus the deprecated ones, kept for older crawler versions.
       {
         userAgent: "Claude-Web",
         allow: "/",
