@@ -135,7 +135,7 @@ export default function GlossaryPage() {
                               {t.term}
                             </span>
                             {t.abbr && (
-                              <span className="text-sm font-medium text-jade-600">
+                              <span className="text-sm font-medium text-jade-700">
                                 {t.abbr}
                               </span>
                             )}
@@ -151,7 +151,7 @@ export default function GlossaryPage() {
                   <div className="mt-10 text-right">
                     <a
                       href="#top"
-                      className="inline-flex items-center gap-2 text-xs uppercase tracking-wider text-body/50 hover:text-jade-600 transition-colors"
+                      className="inline-flex items-center gap-2 text-xs uppercase tracking-wider text-body/80 hover:text-jade-700 transition-colors"
                     >
                       <ArrowUp className="w-3 h-3" />
                       Back to top

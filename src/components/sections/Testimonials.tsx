@@ -1,13 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { TESTIMONIALS } from "@/lib/constants";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function Testimonials() {
   const [current, setCurrent] = useState(0);
+  const reducedMotion = useReducedMotion();
 
   const prev = () =>
     setCurrent((c) => (c === 0 ? TESTIMONIALS.length - 1 : c - 1));
@@ -17,14 +18,7 @@ export function Testimonials() {
   return (
     <section className="hero-atmosphere section-padding-y relative overflow-hidden">
       <div className="hairline-jade absolute inset-x-0 top-0 h-px" />
-      <div
-        className="absolute inset-0 opacity-[0.025]"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle, #6EE7B7 1px, transparent 1px)",
-          backgroundSize: "28px 28px",
-        }}
-      />
+      <div className="dot-grid absolute inset-0 opacity-[0.025]" />
       <div className="hero-glow pointer-events-none absolute left-1/2 top-0 h-[40vw] w-[70vw] -translate-x-1/2 opacity-50" />
 
       <div className="relative z-10 section-padding">
@@ -41,10 +35,10 @@ export function Testimonials() {
               <AnimatePresence mode="wait">
                 <motion.div
                   key={current}
-                  initial={{ opacity: 0, x: 30 }}
+                  initial={reducedMotion ? false : { opacity: 0, x: 30 }}
                   animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -30 }}
-                  transition={{ duration: 0.4 }}
+                  exit={reducedMotion ? undefined : { opacity: 0, x: -30 }}
+                  transition={{ duration: reducedMotion ? 0 : 0.4 }}
                   className="text-center w-full"
                 >
                   <Quote className="w-10 h-10 text-jade-400/40 mx-auto mb-6" />

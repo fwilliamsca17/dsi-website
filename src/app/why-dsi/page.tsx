@@ -124,8 +124,8 @@ export default function WhyDSIPage() {
               {reasons.map((reason, i) => (
                 <FadeIn key={reason.title} delay={i * 0.05}>
                   <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-6 lg:gap-10 p-8 lg:p-10 bg-surface-100 rounded-2xl border border-surface-300">
-                    <div className="w-14 h-14 rounded-2xl bg-emerald-100 flex items-center justify-center shrink-0">
-                      <reason.icon className="w-7 h-7 text-emerald-700" />
+                    <div className="w-14 h-14 rounded-2xl bg-jade-100 flex items-center justify-center shrink-0">
+                      <reason.icon className="w-7 h-7 text-jade-700" />
                     </div>
                     <div>
                       <h3 className="font-heading font-bold text-xl text-slate-700 mb-4">
@@ -136,12 +136,12 @@ export default function WhyDSIPage() {
                           <span className="font-semibold text-slate-600">
                             The pain:
                           </span>{" "}
-                          <span className="text-body/70 leading-relaxed">
+                          <span className="text-body/80 leading-relaxed">
                             {reason.pain}
                           </span>
                         </p>
                         <p className="text-sm">
-                          <span className="font-semibold text-emerald-700">
+                          <span className="font-semibold text-jade-700">
                             DSI&apos;s standard:
                           </span>{" "}
                           <span className="text-body/80 leading-relaxed">
@@ -187,7 +187,7 @@ export default function WhyDSIPage() {
                   <ul className="space-y-3">
                     {promiseList.map((p) => (
                       <li key={p} className="flex items-start gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-5 h-5 text-jade-500 shrink-0 mt-0.5" />
                         <span className="text-sm text-body/80">{p}</span>
                       </li>
                     ))}

@@ -81,18 +81,18 @@ export default function PrivacyPage() {
                 </p>
                 <p className="mt-1">
                   {COMPANY.address} ·{" "}
-                  <a href={`tel:${COMPANY.phone}`} className="text-emerald-600 underline">
+                  <a href={`tel:${COMPANY.phone}`} className="text-jade-700 underline">
                     {COMPANY.phone}
                   </a>{" "}
                   ·{" "}
                   <a
                     href={`mailto:${COMPANY.email}`}
-                    className="text-emerald-600 underline"
+                    className="text-jade-700 underline"
                   >
                     {COMPANY.email}
                   </a>
                 </p>
-                <p className="mt-2 text-body/70">
+                <p className="mt-2 text-body/80">
                   Principal: {COMPANY.principal} · Broker of Record: {COMPANY.brokerOfRecord} (DRE# {COMPANY.brokerOfRecordDre})
                 </p>
               </div>

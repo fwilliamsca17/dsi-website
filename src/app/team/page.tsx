@@ -69,7 +69,7 @@ export default function TeamPage() {
                 <h2 className="font-heading font-bold text-heading-xl text-slate-700 mb-1">
                   {TEAM[0].name}
                 </h2>
-                <p className="text-emerald-600 font-medium text-lg">
+                <p className="text-jade-700 font-medium text-lg">
                   {TEAM[0].title}
                 </p>
               </div>
@@ -80,7 +80,7 @@ export default function TeamPage() {
               {TEAM.slice(1).map((member, i) => (
                 <FadeIn key={member.name} delay={i * 0.08}>
                   <div className="text-center">
-                    <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 border-3 border-surface-200 bg-emerald-50 flex items-center justify-center">
+                    <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 border-4 border-surface-200 bg-jade-50 flex items-center justify-center">
                       {member.image ? (
                         <Image
                           src={member.image}
@@ -90,13 +90,13 @@ export default function TeamPage() {
                           className="w-full h-full object-cover"
                         />
                       ) : (
-                        <User className="w-10 h-10 text-emerald-600/30" />
+                        <User className="w-10 h-10 text-jade-600/30" />
                       )}
                     </div>
                     <h3 className="font-heading font-semibold text-sm text-slate-700 mb-0.5">
                       {member.name}
                     </h3>
-                    <p className="text-xs text-body/60">{member.title}</p>
+                    <p className="text-xs text-body/80">{member.title}</p>
                   </div>
                 </FadeIn>
               ))}

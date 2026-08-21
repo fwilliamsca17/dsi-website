@@ -57,10 +57,10 @@ export function ProcessTimeline() {
                   <h3 className="font-heading font-semibold text-lg text-slate-700 mb-1">
                     {step.title}
                   </h3>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-emerald-600 mb-3">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-jade-700 mb-3">
                     {step.sla}
                   </p>
-                  <p className="text-sm text-body/70 leading-relaxed">
+                  <p className="text-sm text-body/80 leading-relaxed">
                     {step.description}
                   </p>
                   {i < steps.length - 1 && (

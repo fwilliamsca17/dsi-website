@@ -67,14 +67,14 @@ export function WhyDSI() {
             {reasons.map((reason, i) => (
               <FadeIn key={reason.title} delay={i * 0.08}>
                 <div className="flex gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-emerald-50 flex items-center justify-center shrink-0">
-                    <reason.icon className="w-5 h-5 text-emerald-600" />
+                  <div className="w-10 h-10 rounded-lg bg-jade-50 flex items-center justify-center shrink-0">
+                    <reason.icon className="w-5 h-5 text-jade-600" />
                   </div>
                   <div>
                     <h3 className="font-heading font-semibold text-slate-700 mb-2">
                       {reason.title}
                     </h3>
-                    <p className="text-sm text-body/70 leading-relaxed">
+                    <p className="text-sm text-body/80 leading-relaxed">
                       {reason.proof}
                     </p>
                   </div>

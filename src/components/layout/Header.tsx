@@ -65,11 +65,35 @@ export function Header() {
                 key={link.label}
                 className="relative"
                 onMouseEnter={() => link.children && setOpenDropdown(link.label)}
-                onMouseLeave={() => setOpenDropdown(null)}
+                onMouseLeave={(e) => {
+                  // Don't yank the submenu away from a keyboard user just
+                  // because the pointer crossed the nav.
+                  if (!e.currentTarget.contains(document.activeElement)) {
+                    setOpenDropdown(null);
+                  }
+                }}
+                // Keyboard parity with hover: focus entering the group opens
+                // the submenu, focus leaving it closes, Escape dismisses and
+                // hands focus back to the trigger so Tab doesn't reset to top.
+                onFocus={() => link.children && setOpenDropdown(link.label)}
+                onBlur={(e) => {
+                  if (!e.currentTarget.contains(e.relatedTarget)) {
+                    setOpenDropdown(null);
+                  }
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === "Escape") {
+                    e.currentTarget.querySelector("a")?.focus();
+                    setOpenDropdown(null);
+                  }
+                }}
               >
                 <Link
                   href={link.href}
                   className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-pearl/80 hover:text-jade-300 transition-colors rounded-lg"
+                  {...(link.children && {
+                    "aria-expanded": openDropdown === link.label,
+                  })}
                 >
                   {link.label}
                   {link.children && <ChevronDown className="w-3.5 h-3.5" />}
@@ -104,6 +128,8 @@ export function Header() {
               onClick={() => setMobileOpen(!mobileOpen)}
               className="lg:hidden p-2 text-pearl"
               aria-label="Toggle menu"
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-nav"
             >
               {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -111,9 +137,14 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile menu */}
-      {mobileOpen && (
-        <div className="lg:hidden bg-ink-950/95 backdrop-blur-xl border-t border-pearl/10">
+      {/* Mobile menu — always in the DOM (hidden when closed) so the
+          hamburger's aria-controls always points at a real element. */}
+      {
+        <div
+          id="mobile-nav"
+          hidden={!mobileOpen}
+          className="lg:hidden bg-ink-950/95 backdrop-blur-xl border-t border-pearl/10"
+        >
           <div className="section-padding py-6 space-y-1">
             {NAV_LINKS.map((link) => (
               <div key={link.label}>
@@ -151,7 +182,7 @@ export function Header() {
             </div>
           </div>
         </div>
-      )}
+      }
 
       {/* Hairline jade accent — visible when scrolled */}
       {scrolled && (

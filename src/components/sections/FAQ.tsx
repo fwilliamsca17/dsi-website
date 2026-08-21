@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FadeIn } from "@/components/ui/FadeIn";
@@ -24,6 +24,7 @@ export function FAQ({
   dark = false,
 }: FAQProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const baseId = useId();
 
   return (
     <section className={dark ? "hero-atmosphere relative overflow-hidden py-20 lg:py-section-lg" : "bg-surface-100 py-20 lg:py-section-lg"}>
@@ -43,6 +44,9 @@ export function FAQ({
                 >
                   <button
                     onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                    aria-expanded={openIndex === i}
+                    aria-controls={`${baseId}-panel-${i}`}
+                    id={`${baseId}-question-${i}`}
                     className={`w-full flex items-center justify-between px-6 py-4 text-left transition-colors ${
                       dark
                         ? "hover:bg-white/5 text-pearl"
@@ -53,15 +57,19 @@ export function FAQ({
                       {faq.question}
                     </span>
                     <ChevronDown
+                      aria-hidden="true"
                       className={`w-5 h-5 shrink-0 transition-transform ${
                         openIndex === i ? "rotate-180" : ""
-                      } ${dark ? "text-emerald-400" : "text-emerald-600"}`}
+                      } ${dark ? "text-jade-400" : "text-jade-600"}`}
                     />
                   </button>
                   {openIndex === i && (
                     <div
+                      id={`${baseId}-panel-${i}`}
+                      role="region"
+                      aria-labelledby={`${baseId}-question-${i}`}
                       className={`px-6 pb-5 text-sm leading-relaxed ${
-                        dark ? "text-pearl/60" : "text-body/70"
+                        dark ? "text-pearl/60" : "text-body/80"
                       }`}
                     >
                       {faq.answer}

@@ -83,8 +83,8 @@ export default function ServicesPage() {
                       }`}
                     >
                       <FadeIn>
-                        <div className="w-14 h-14 rounded-2xl bg-emerald-50 flex items-center justify-center mb-6">
-                          <Icon className="w-7 h-7 text-emerald-600" />
+                        <div className="w-14 h-14 rounded-2xl bg-jade-50 flex items-center justify-center mb-6">
+                          <Icon className="w-7 h-7 text-jade-600" />
                         </div>
                         <h2 className="font-heading text-heading-xl text-slate-700 mb-4">
                           {service.title}
@@ -109,7 +109,7 @@ export default function ServicesPage() {
                                 key={feature}
                                 className="flex items-start gap-3"
                               >
-                                <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                                <CheckCircle2 className="w-5 h-5 text-jade-500 shrink-0 mt-0.5" />
                                 <span className="text-sm text-body/80">
                                   {feature}
                                 </span>

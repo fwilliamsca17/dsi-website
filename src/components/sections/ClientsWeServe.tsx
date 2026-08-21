@@ -34,7 +34,7 @@ export function ClientsWeServe() {
               const Icon = iconMap[client.icon] || User;
               return (
                 <FadeIn key={client.label} delay={i * 0.08}>
-                  <div className="text-center p-6 rounded-xl border border-surface-300 hover:border-emerald-200 hover:shadow-lg hover:shadow-emerald-600/5 transition-all">
+                  <div className="text-center p-6 rounded-xl border border-surface-300 hover:border-jade-200 hover:shadow-lg hover:shadow-jade-600/5 transition-all">
                     <div className="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center mx-auto mb-4">
                       <Icon className="w-7 h-7 text-slate-600" />
                     </div>

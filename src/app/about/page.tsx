@@ -118,11 +118,11 @@ export default function AboutPage() {
               <FadeIn>
                 <div className="bg-surface-100 rounded-2xl p-12 flex items-center justify-center aspect-[4/3]">
                   <div className="text-center">
-                    <Building2 className="w-16 h-16 text-emerald-600/30 mx-auto mb-4" />
-                    <p className="text-sm text-body/40">
+                    <Building2 className="w-16 h-16 text-jade-600/30 mx-auto mb-4" />
+                    <p className="text-sm text-body/80">
                       West Covina, California
                     </p>
-                    <p className="text-xs text-body/30 mt-1">
+                    <p className="text-xs text-body/70 mt-1">
                       Headquarters · San Gabriel Valley
                     </p>
                   </div>
@@ -178,14 +178,14 @@ export default function AboutPage() {
               {values.map((value, i) => (
                 <FadeIn key={value.title} delay={i * 0.1}>
                   <div className="card flex gap-5">
-                    <div className="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center shrink-0">
-                      <value.icon className="w-6 h-6 text-emerald-600" />
+                    <div className="w-12 h-12 rounded-xl bg-jade-50 flex items-center justify-center shrink-0">
+                      <value.icon className="w-6 h-6 text-jade-600" />
                     </div>
                     <div>
                       <h3 className="font-heading font-semibold text-lg text-slate-700 mb-2">
                         {value.title}
                       </h3>
-                      <p className="text-sm text-body/70 leading-relaxed">
+                      <p className="text-sm text-body/80 leading-relaxed">
                         {value.description}
                       </p>
                     </div>
@@ -211,16 +211,16 @@ export default function AboutPage() {
                 <FadeIn key={i} delay={i * 0.1}>
                   <div className="flex gap-6">
                     <div className="w-16 shrink-0 text-right">
-                      <span className="font-heading font-bold text-emerald-600">
+                      <span className="font-heading font-bold text-jade-700">
                         {milestone.year}
                       </span>
                     </div>
                     <div className="relative pb-8 border-l-2 border-surface-300 pl-6">
-                      <div className="absolute left-0 top-1.5 -translate-x-[5px] w-2 h-2 rounded-full bg-emerald-500" />
+                      <div className="absolute left-0 top-1.5 -translate-x-[5px] w-2 h-2 rounded-full bg-jade-500" />
                       <h3 className="font-heading font-semibold text-slate-700 mb-1">
                         {milestone.title}
                       </h3>
-                      <p className="text-sm text-body/70 leading-relaxed">
+                      <p className="text-sm text-body/80 leading-relaxed">
                         {milestone.description}
                       </p>
                     </div>

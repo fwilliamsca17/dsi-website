@@ -19,6 +19,12 @@ export function FadeIn({
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    // Reduced-motion users get content immediately — no scroll reveal.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -43,6 +49,7 @@ export function FadeIn({
   return (
     <div
       ref={ref}
+      data-fadein=""
       className={className}
       style={{
         opacity: visible ? 1 : 0,

@@ -117,8 +117,13 @@ export default function RootLayout({
         <JuanWilliamsJsonLd />
         <LocalBusinessJsonLd />
         <WebSiteJsonLd />
+        <a href="#main" className="skip-link">
+          Skip to content
+        </a>
         <Header />
-        <main>{children}</main>
+        <main id="main" tabIndex={-1} className="outline-none">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

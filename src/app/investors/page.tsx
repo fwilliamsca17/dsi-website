@@ -149,8 +149,8 @@ export default function InvestorsPage() {
                 <FadeIn key={problem.title} delay={i * 0.08}>
                   <div className="card flex flex-col gap-5 h-full">
                     <div className="flex gap-4 items-start">
-                      <div className="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center shrink-0">
-                        <problem.icon className="w-6 h-6 text-emerald-600" />
+                      <div className="w-12 h-12 rounded-xl bg-jade-50 flex items-center justify-center shrink-0">
+                        <problem.icon className="w-6 h-6 text-jade-600" />
                       </div>
                       <h3 className="font-heading font-semibold text-lg text-slate-700 mt-2">
                         {problem.title}
@@ -161,10 +161,10 @@ export default function InvestorsPage() {
                         <span className="font-semibold text-slate-600">
                           The pain:
                         </span>{" "}
-                        <span className="text-body/70">{problem.pain}</span>
+                        <span className="text-body/80">{problem.pain}</span>
                       </p>
                       <p>
-                        <span className="font-semibold text-emerald-700">
+                        <span className="font-semibold text-jade-700">
                           DSI:
                         </span>{" "}
                         <span className="text-body/80">{problem.solution}</span>
@@ -193,13 +193,13 @@ export default function InvestorsPage() {
               {dashboardFeatures.map((feature, i) => (
                 <FadeIn key={feature.title} delay={i * 0.08}>
                   <div className="card h-full">
-                    <div className="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center mb-5">
-                      <feature.icon className="w-6 h-6 text-emerald-600" />
+                    <div className="w-12 h-12 rounded-xl bg-jade-50 flex items-center justify-center mb-5">
+                      <feature.icon className="w-6 h-6 text-jade-600" />
                     </div>
                     <h3 className="font-heading font-semibold text-lg text-slate-700 mb-2">
                       {feature.title}
                     </h3>
-                    <p className="text-sm text-body/70 leading-relaxed">
+                    <p className="text-sm text-body/80 leading-relaxed">
                       {feature.description}
                     </p>
                   </div>
@@ -239,7 +239,7 @@ export default function InvestorsPage() {
                   <ul className="space-y-3">
                     {reportTypes.map((report) => (
                       <li key={report} className="flex items-center gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0" />
+                        <CheckCircle2 className="w-5 h-5 text-jade-500 shrink-0" />
                         <span className="text-sm text-body/80">{report}</span>
                       </li>
                     ))}

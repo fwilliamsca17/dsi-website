@@ -7,14 +7,7 @@ export function StatsBar() {
   return (
     <section className="relative overflow-hidden bg-ink-950 py-16 md:py-20">
       {/* Jade dot pattern */}
-      <div
-        className="absolute inset-0 opacity-[0.05]"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle, #6EE7B7 1px, transparent 1px)",
-          backgroundSize: "24px 24px",
-        }}
-      />
+      <div className="dot-grid absolute inset-0 opacity-[0.05]" />
       {/* Soft jade glow continuing the hero atmosphere */}
       <div className="hero-glow pointer-events-none absolute -top-1/2 left-1/2 h-[40vw] w-[80vw] -translate-x-1/2 opacity-60" />
       {/* Jade hairline top edge */}

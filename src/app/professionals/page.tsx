@@ -112,15 +112,15 @@ export default function ProfessionalsPage() {
                   <FadeIn key={prof.slug} delay={i * 0.08}>
                     <div
                       id={prof.slug}
-                      className="group bg-surface-100 hover:bg-white border border-surface-300 hover:border-jade-400/60 hover:shadow-lg hover:shadow-emerald-500/5 rounded-2xl p-8 transition-all h-full flex flex-col"
+                      className="group bg-surface-100 hover:bg-white border border-surface-300 hover:border-jade-400/60 hover:shadow-lg hover:shadow-jade-500/5 rounded-2xl p-8 transition-all h-full flex flex-col"
                     >
                       <div className="w-12 h-12 rounded-xl bg-jade-500/10 group-hover:bg-jade-500/20 flex items-center justify-center mb-5 transition-colors">
-                        {Icon && <Icon className="w-6 h-6 text-emerald-600" />}
+                        {Icon && <Icon className="w-6 h-6 text-jade-600" />}
                       </div>
                       <h3 className="font-heading font-bold text-slate-700 text-xl mb-3">
                         {prof.title}
                       </h3>
-                      <p className="text-body/70 leading-relaxed mb-5">
+                      <p className="text-body/80 leading-relaxed mb-5">
                         {prof.summary}
                       </p>
                       <ul className="space-y-2 mt-auto">
@@ -129,7 +129,7 @@ export default function ProfessionalsPage() {
                             key={item}
                             className="flex items-start gap-2.5 text-sm text-body/80"
                           >
-                            <CheckCircle className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                            <CheckCircle className="w-4 h-4 text-jade-500 shrink-0 mt-0.5" />
                             <span>{item}</span>
                           </li>
                         ))}
@@ -153,7 +153,7 @@ export default function ProfessionalsPage() {
                 <h2 className="font-heading font-bold text-display-lg text-slate-700 mb-6">
                   The bar we hold ourselves to
                 </h2>
-                <p className="text-body/70 text-lg leading-relaxed mb-8">
+                <p className="text-body/80 text-lg leading-relaxed mb-8">
                   Servicing is a deadline business. A late payoff demand
                   blows escrow. A missing 1098 blows tax season. A sloppy
                   proof of claim loses standing in bankruptcy court. We
@@ -170,7 +170,7 @@ export default function ProfessionalsPage() {
                 <ul className="space-y-4">
                   {PARTNER_STANDARDS.map((standard) => (
                     <li key={standard} className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                      <CheckCircle className="w-5 h-5 text-jade-500 shrink-0 mt-0.5" />
                       <span className="text-body leading-relaxed">{standard}</span>
                     </li>
                   ))}

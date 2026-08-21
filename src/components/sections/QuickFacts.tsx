@@ -53,7 +53,7 @@ export function QuickFacts() {
             >
               Direct Servicing Initiative — the short version
             </h2>
-            <p className="mt-3 text-body/70 max-w-2xl mx-auto">
+            <p className="mt-3 text-body/80 max-w-2xl mx-auto">
               <strong>Direct Servicing Initiative</strong> (DSI) is a
               California-licensed private money loan servicer headquartered in
               West Covina. DSI takes over after a private lender, hard money
@@ -75,7 +75,7 @@ export function QuickFacts() {
                     <f.icon className="w-4 h-4 text-jade-600" />
                   </div>
                   <div>
-                    <dt className="text-[10px] font-semibold uppercase tracking-[0.15em] text-body/50 mb-1">
+                    <dt className="text-[10px] font-semibold uppercase tracking-[0.15em] text-body/80 mb-1">
                       {f.label}
                     </dt>
                     <dd className="text-sm text-slate-700 leading-relaxed font-medium">

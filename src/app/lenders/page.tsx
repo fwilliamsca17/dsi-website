@@ -144,8 +144,8 @@ export default function LendersPage() {
                 <FadeIn key={problem.title} delay={i * 0.08}>
                   <div className="card flex flex-col gap-5 h-full">
                     <div className="flex gap-4 items-start">
-                      <div className="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center shrink-0">
-                        <problem.icon className="w-6 h-6 text-emerald-600" />
+                      <div className="w-12 h-12 rounded-xl bg-jade-50 flex items-center justify-center shrink-0">
+                        <problem.icon className="w-6 h-6 text-jade-600" />
                       </div>
                       <h3 className="font-heading font-semibold text-lg text-slate-700 mt-2">
                         {problem.title}
@@ -156,10 +156,10 @@ export default function LendersPage() {
                         <span className="font-semibold text-slate-600">
                           The pain:
                         </span>{" "}
-                        <span className="text-body/70">{problem.pain}</span>
+                        <span className="text-body/80">{problem.pain}</span>
                       </p>
                       <p>
-                        <span className="font-semibold text-emerald-700">
+                        <span className="font-semibold text-jade-700">
                           DSI:
                         </span>{" "}
                         <span className="text-body/80">{problem.solution}</span>
@@ -188,15 +188,15 @@ export default function LendersPage() {
               {onboardingSteps.map((step, i) => (
                 <FadeIn key={step.number} delay={i * 0.1}>
                   <div className="text-center">
-                    <div className="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center mx-auto mb-4">
-                      <span className="font-heading font-bold text-emerald-700">
+                    <div className="w-12 h-12 rounded-full bg-jade-100 flex items-center justify-center mx-auto mb-4">
+                      <span className="font-heading font-bold text-jade-700">
                         {step.number}
                       </span>
                     </div>
                     <h3 className="font-heading font-semibold text-slate-700 mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-sm text-body/70 leading-relaxed">
+                    <p className="text-sm text-body/80 leading-relaxed">
                       {step.description}
                     </p>
                   </div>
@@ -226,7 +226,7 @@ export default function LendersPage() {
                 <ul className="space-y-4">
                   {lenderBenefits.map((benefit) => (
                     <li key={benefit} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-5 h-5 text-jade-500 shrink-0 mt-0.5" />
                       <span className="text-body/80">{benefit}</span>
                     </li>
                   ))}
@@ -245,14 +245,14 @@ export default function LendersPage() {
                       { icon: Briefcase, label: "White-Label Ready" },
                     ].map((item) => (
                       <div key={item.label}>
-                        <item.icon className="w-8 h-8 text-emerald-600 mx-auto mb-2" />
+                        <item.icon className="w-8 h-8 text-jade-600 mx-auto mb-2" />
                         <span className="text-sm font-medium text-slate-700">
                           {item.label}
                         </span>
                       </div>
                     ))}
                   </div>
-                  <p className="text-xs text-body/60 text-center leading-relaxed border-t border-surface-300 pt-5">
+                  <p className="text-xs text-body/80 text-center leading-relaxed border-t border-surface-300 pt-5">
                     DSI is operated as a{" "}
                     <span className="font-semibold text-slate-700">
                       California-licensed brokerage

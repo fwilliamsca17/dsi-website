@@ -10,14 +10,7 @@ export function GetInTouch() {
   return (
     <section className="hero-atmosphere section-padding-y relative overflow-hidden">
       <div className="hairline-jade absolute inset-x-0 top-0 h-px" />
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle, #6EE7B7 1px, transparent 1px)",
-          backgroundSize: "24px 24px",
-        }}
-      />
+      <div className="dot-grid absolute inset-0 opacity-[0.03]" />
       <div className="hero-glow pointer-events-none absolute left-1/2 top-0 h-[40vw] w-[70vw] -translate-x-1/2 opacity-50" />
 
       <div className="relative z-10 section-padding">
@@ -25,7 +18,7 @@ export function GetInTouch() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <p className="eyebrow !text-jade-300 mb-4">Get in Touch</p>
-              <h2 className="font-heading font-bold text-display-lg lg:text-display text-pearl mb-6">
+              <h2 className="font-heading font-bold text-display-lg lg:text-display-xl text-pearl mb-6">
                 Ready to simplify your loan servicing?
               </h2>
               <p className="text-pearl/60 text-lg leading-relaxed max-w-lg mb-8">
@@ -74,39 +67,73 @@ export function GetInTouch() {
                     name="subject"
                     value="New DSI Website Inquiry"
                   />
+                  {/* Labels are sr-only: the dark card design is placeholder-
+                      driven, but screen readers still need programmatic names. */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="Full Name *"
-                      required
-                      className="w-full bg-pearl/[0.04] border border-pearl/15 rounded-lg px-4 py-3 text-sm text-pearl placeholder:text-pearl/35 focus:outline-none focus:border-jade-400/60 transition-colors"
-                    />
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Email Address *"
-                      required
-                      className="w-full bg-pearl/[0.04] border border-pearl/15 rounded-lg px-4 py-3 text-sm text-pearl placeholder:text-pearl/35 focus:outline-none focus:border-jade-400/60 transition-colors"
-                    />
+                    <div>
+                      <label htmlFor="lead-name" className="sr-only">
+                        Full Name
+                      </label>
+                      <input
+                        id="lead-name"
+                        type="text"
+                        name="name"
+                        autoComplete="name"
+                        placeholder="Full Name *"
+                        required
+                        className="w-full bg-pearl/[0.04] border border-pearl/15 rounded-lg px-4 py-3 text-sm text-pearl placeholder:text-pearl/35 focus:outline-none focus:border-jade-400/60 transition-colors"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="lead-email" className="sr-only">
+                        Email Address
+                      </label>
+                      <input
+                        id="lead-email"
+                        type="email"
+                        name="email"
+                        autoComplete="email"
+                        placeholder="Email Address *"
+                        required
+                        className="w-full bg-pearl/[0.04] border border-pearl/15 rounded-lg px-4 py-3 text-sm text-pearl placeholder:text-pearl/35 focus:outline-none focus:border-jade-400/60 transition-colors"
+                      />
+                    </div>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    <input
-                      type="tel"
-                      name="phone"
-                      placeholder="Phone Number"
-                      className="w-full bg-pearl/[0.04] border border-pearl/15 rounded-lg px-4 py-3 text-sm text-pearl placeholder:text-pearl/35 focus:outline-none focus:border-jade-400/60 transition-colors"
-                    />
-                    <input
-                      type="text"
-                      name="company"
-                      placeholder="Company / Firm"
-                      className="w-full bg-pearl/[0.04] border border-pearl/15 rounded-lg px-4 py-3 text-sm text-pearl placeholder:text-pearl/35 focus:outline-none focus:border-jade-400/60 transition-colors"
-                    />
+                    <div>
+                      <label htmlFor="lead-phone" className="sr-only">
+                        Phone Number
+                      </label>
+                      <input
+                        id="lead-phone"
+                        type="tel"
+                        name="phone"
+                        autoComplete="tel"
+                        placeholder="Phone Number"
+                        className="w-full bg-pearl/[0.04] border border-pearl/15 rounded-lg px-4 py-3 text-sm text-pearl placeholder:text-pearl/35 focus:outline-none focus:border-jade-400/60 transition-colors"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="lead-company" className="sr-only">
+                        Company / Firm
+                      </label>
+                      <input
+                        id="lead-company"
+                        type="text"
+                        name="company"
+                        autoComplete="organization"
+                        placeholder="Company / Firm"
+                        className="w-full bg-pearl/[0.04] border border-pearl/15 rounded-lg px-4 py-3 text-sm text-pearl placeholder:text-pearl/35 focus:outline-none focus:border-jade-400/60 transition-colors"
+                      />
+                    </div>
                   </div>
 
+                  <label htmlFor="lead-inquiry-type" className="sr-only">
+                    Inquiry Type
+                  </label>
                   <select
+                    id="lead-inquiry-type"
                     name="inquiry_type"
                     className="w-full bg-pearl/[0.04] border border-pearl/15 rounded-lg px-4 py-3 text-sm text-pearl/80 focus:outline-none focus:border-jade-400/60 transition-colors"
                     defaultValue="Lender Inquiry"
@@ -134,7 +161,11 @@ export function GetInTouch() {
                     </option>
                   </select>
 
+                  <label htmlFor="lead-message" className="sr-only">
+                    How can we help?
+                  </label>
                   <textarea
+                    id="lead-message"
                     name="message"
                     placeholder="Tell us about your servicing needs..."
                     rows={4}

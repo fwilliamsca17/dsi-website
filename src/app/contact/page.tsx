@@ -63,14 +63,14 @@ export default function ContactPage() {
                       href={`tel:${COMPANY.phone}`}
                       className="flex items-start gap-4 group"
                     >
-                      <div className="w-10 h-10 rounded-lg bg-emerald-50 flex items-center justify-center shrink-0 group-hover:bg-emerald-100 transition-colors">
-                        <Phone className="w-5 h-5 text-emerald-600" />
+                      <div className="w-10 h-10 rounded-lg bg-jade-50 flex items-center justify-center shrink-0 group-hover:bg-jade-100 transition-colors">
+                        <Phone className="w-5 h-5 text-jade-600" />
                       </div>
                       <div>
                         <p className="text-sm font-medium text-slate-700">
                           Phone
                         </p>
-                        <p className="text-sm text-body/70">{COMPANY.phone}</p>
+                        <p className="text-sm text-body/80">{COMPANY.phone}</p>
                       </div>
                     </a>
 
@@ -78,40 +78,40 @@ export default function ContactPage() {
                       href={`mailto:${COMPANY.email}`}
                       className="flex items-start gap-4 group"
                     >
-                      <div className="w-10 h-10 rounded-lg bg-emerald-50 flex items-center justify-center shrink-0 group-hover:bg-emerald-100 transition-colors">
-                        <Mail className="w-5 h-5 text-emerald-600" />
+                      <div className="w-10 h-10 rounded-lg bg-jade-50 flex items-center justify-center shrink-0 group-hover:bg-jade-100 transition-colors">
+                        <Mail className="w-5 h-5 text-jade-600" />
                       </div>
                       <div>
                         <p className="text-sm font-medium text-slate-700">
                           Email
                         </p>
-                        <p className="text-sm text-body/70">{COMPANY.email}</p>
+                        <p className="text-sm text-body/80">{COMPANY.email}</p>
                       </div>
                     </a>
 
                     <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-emerald-50 flex items-center justify-center shrink-0">
-                        <MapPin className="w-5 h-5 text-emerald-600" />
+                      <div className="w-10 h-10 rounded-lg bg-jade-50 flex items-center justify-center shrink-0">
+                        <MapPin className="w-5 h-5 text-jade-600" />
                       </div>
                       <div>
                         <p className="text-sm font-medium text-slate-700">
                           Office
                         </p>
-                        <p className="text-sm text-body/70">
+                        <p className="text-sm text-body/80">
                           {COMPANY.address}
                         </p>
                       </div>
                     </div>
 
                     <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-emerald-50 flex items-center justify-center shrink-0">
-                        <Clock className="w-5 h-5 text-emerald-600" />
+                      <div className="w-10 h-10 rounded-lg bg-jade-50 flex items-center justify-center shrink-0">
+                        <Clock className="w-5 h-5 text-jade-600" />
                       </div>
                       <div>
                         <p className="text-sm font-medium text-slate-700">
                           Hours
                         </p>
-                        <p className="text-sm text-body/70">
+                        <p className="text-sm text-body/80">
                           Monday - Friday, 9am - 6pm PT
                         </p>
                       </div>
@@ -122,7 +122,7 @@ export default function ContactPage() {
                     <p className="text-sm font-medium text-slate-700 mb-2">
                       Family-Owned & Operated
                     </p>
-                    <p className="text-sm text-body/60 leading-relaxed">
+                    <p className="text-sm text-body/80 leading-relaxed">
                       DSI is a family-owned company delivering institutional-grade
                       loan servicing with the personal accountability and
                       transparency that comes from private ownership.
@@ -137,11 +137,11 @@ export default function ContactPage() {
                   <div className="bg-surface-100 rounded-2xl p-8 lg:p-10">
                     {submitted ? (
                       <div className="text-center py-16">
-                        <CheckCircle className="w-14 h-14 text-emerald-500 mx-auto mb-4" />
+                        <CheckCircle className="w-14 h-14 text-jade-500 mx-auto mb-4" />
                         <h3 className="font-heading text-heading-lg text-slate-700 mb-2">
                           Message Sent!
                         </h3>
-                        <p className="text-body/60">
+                        <p className="text-body/80">
                           Thank you for reaching out. We&apos;ll be in touch
                           within 24 hours.
                         </p>
@@ -156,26 +156,36 @@ export default function ContactPage() {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                           <div>
-                            <label className="block text-sm font-medium text-slate-700 mb-2">
+                            <label
+                              htmlFor="contact-name"
+                              className="block text-sm font-medium text-slate-700 mb-2"
+                            >
                               Full Name
                             </label>
                             <input
+                              id="contact-name"
                               type="text"
                               name="name"
+                              autoComplete="name"
                               required
-                              className="w-full bg-white border border-surface-400 rounded-lg px-4 py-3 text-sm text-slate-700 placeholder:text-body/30 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors"
+                              className="w-full bg-white border border-surface-400 rounded-lg px-4 py-3 text-sm text-slate-700 placeholder:text-body/30 focus:outline-none focus:border-jade-500 focus:ring-1 focus:ring-jade-500 transition-colors"
                               placeholder="John Smith"
                             />
                           </div>
                           <div>
-                            <label className="block text-sm font-medium text-slate-700 mb-2">
+                            <label
+                              htmlFor="contact-email"
+                              className="block text-sm font-medium text-slate-700 mb-2"
+                            >
                               Email Address
                             </label>
                             <input
+                              id="contact-email"
                               type="email"
                               name="email"
+                              autoComplete="email"
                               required
-                              className="w-full bg-white border border-surface-400 rounded-lg px-4 py-3 text-sm text-slate-700 placeholder:text-body/30 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors"
+                              className="w-full bg-white border border-surface-400 rounded-lg px-4 py-3 text-sm text-slate-700 placeholder:text-body/30 focus:outline-none focus:border-jade-500 focus:ring-1 focus:ring-jade-500 transition-colors"
                               placeholder="john@example.com"
                             />
                           </div>
@@ -183,23 +193,32 @@ export default function ContactPage() {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                           <div>
-                            <label className="block text-sm font-medium text-slate-700 mb-2">
+                            <label
+                              htmlFor="contact-phone"
+                              className="block text-sm font-medium text-slate-700 mb-2"
+                            >
                               Phone Number
                             </label>
                             <input
+                              id="contact-phone"
                               type="tel"
                               name="phone"
-                              className="w-full bg-white border border-surface-400 rounded-lg px-4 py-3 text-sm text-slate-700 placeholder:text-body/30 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors"
+                              autoComplete="tel"
+                              className="w-full bg-white border border-surface-400 rounded-lg px-4 py-3 text-sm text-slate-700 placeholder:text-body/30 focus:outline-none focus:border-jade-500 focus:ring-1 focus:ring-jade-500 transition-colors"
                               placeholder="(555) 123-4567"
                             />
                           </div>
                           <div>
-                            <label className="block text-sm font-medium text-slate-700 mb-2">
+                            <label
+                              htmlFor="contact-type"
+                              className="block text-sm font-medium text-slate-700 mb-2"
+                            >
                               I am a...
                             </label>
                             <select
+                              id="contact-type"
                               name="type"
-                              className="w-full bg-white border border-surface-400 rounded-lg px-4 py-3 text-sm text-slate-700 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors"
+                              className="w-full bg-white border border-surface-400 rounded-lg px-4 py-3 text-sm text-slate-700 focus:outline-none focus:border-jade-500 focus:ring-1 focus:ring-jade-500 transition-colors"
                               defaultValue=""
                             >
                               <option value="" disabled>
@@ -215,14 +234,18 @@ export default function ContactPage() {
                         </div>
 
                         <div>
-                          <label className="block text-sm font-medium text-slate-700 mb-2">
+                          <label
+                            htmlFor="contact-message"
+                            className="block text-sm font-medium text-slate-700 mb-2"
+                          >
                             How can we help?
                           </label>
                           <textarea
+                            id="contact-message"
                             name="message"
                             rows={5}
                             required
-                            className="w-full bg-white border border-surface-400 rounded-lg px-4 py-3 text-sm text-slate-700 placeholder:text-body/30 focus:outline-none focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 transition-colors resize-none"
+                            className="w-full bg-white border border-surface-400 rounded-lg px-4 py-3 text-sm text-slate-700 placeholder:text-body/30 focus:outline-none focus:border-jade-500 focus:ring-1 focus:ring-jade-500 transition-colors resize-none"
                             placeholder="Tell us about your servicing needs, portfolio size, or any questions..."
                           />
                         </div>

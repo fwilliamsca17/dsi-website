@@ -23,8 +23,8 @@ export function TeamPreview() {
             {/* Homepage preview shows headshot members only — Broker of Record
                 (no photo) is listed on the full /team page. */}
             {TEAM.filter((m) => m.image).slice(0, 8).map((member, i) => (
-              <FadeIn key={member.name} delay={i * 0.05} className="text-center">
-                <div className="relative w-32 h-32 lg:w-36 lg:h-36 mx-auto mb-4 rounded-full overflow-hidden ring-4 ring-emerald-500/10 group-hover:ring-emerald-500/30 transition-all">
+              <FadeIn key={member.name} delay={i * 0.05} className="group text-center">
+                <div className="relative w-32 h-32 lg:w-36 lg:h-36 mx-auto mb-4 rounded-full overflow-hidden ring-4 ring-jade-500/10 group-hover:ring-jade-500/30 transition-all">
                   <Image
                     src={member.image as string}
                     alt={member.name}
@@ -36,7 +36,7 @@ export function TeamPreview() {
                 <h3 className="font-heading font-semibold text-slate-700 text-sm lg:text-base">
                   {member.name}
                 </h3>
-                <p className="text-body/60 text-xs lg:text-sm mt-1">
+                <p className="text-body/80 text-xs lg:text-sm mt-1">
                   {member.title}
                 </p>
               </FadeIn>
@@ -46,7 +46,7 @@ export function TeamPreview() {
           <div className="mt-12 text-center">
             <Link
               href="/team"
-              className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-semibold transition-colors"
+              className="inline-flex items-center gap-2 text-jade-700 hover:text-jade-800 font-semibold transition-colors"
             >
               Meet the full team
               <ArrowRight className="w-4 h-4" />

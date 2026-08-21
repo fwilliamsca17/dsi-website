@@ -36,13 +36,13 @@ export function ServicesOverview() {
                     href={`/services#${service.slug}`}
                     className="card group block h-full"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center mb-5 group-hover:bg-emerald-100 transition-colors">
-                      <Icon className="w-6 h-6 text-emerald-600" />
+                    <div className="w-12 h-12 rounded-xl bg-jade-50 flex items-center justify-center mb-5 group-hover:bg-jade-100 transition-colors">
+                      <Icon className="w-6 h-6 text-jade-600" />
                     </div>
                     <h3 className="font-heading font-semibold text-lg text-slate-700 mb-2">
                       {service.title}
                     </h3>
-                    <p className="text-sm text-body/70 leading-relaxed mb-4">
+                    <p className="text-sm text-body/80 leading-relaxed mb-4">
                       {service.shortDescription}
                     </p>
                     <span className="btn-ghost text-xs">
